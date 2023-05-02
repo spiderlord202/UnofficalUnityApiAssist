@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # unofficalunityapiassist README
 
 This is the README for your extension "unofficalunityapiassist". After writing up a brief description, we recommend including the following sections.
@@ -63,3 +64,7 @@ You can author your README using Visual Studio Code. Here are some useful editor
 * [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
 
 **Enjoy!**
+=======
+# UnofficalUnityApiAssist
+A VSC extention that helps with the unity api
+>>>>>>> c3b7789 (Initial commit)
