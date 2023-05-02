@@ -959,7 +959,61 @@
         ],
         "description": "https://docs.unity3d.com/ScriptReference/AI.NavMesh-onPreUpdate.html"
     },
+    "pathfindingIterationsPerFrame": {
+        "prefix": ["pI", "path","finding"],
+        "body": [
+            "pathfindingIterationsPerFrame",
+        ],
+        "description": "https://docs.unity3d.com/ScriptReference/AI.NavMesh-pathfindingIterationsPerFrame.html"
+    },
+    "AddLink": {
+        "prefix": ["al", "add","link"],
+        "body": [
+            "AddLink",
+        ],
+        "description": "https://docs.unity3d.com/ScriptReference/AI.NavMesh.AddLink.html"
+    },
+    "AddNavMeshData": {
+        "prefix": ["an", "am","add", "nav"],
+        "body": [
+            "AddNavMeshData",
+        ],
+        "description": "https://docs.unity3d.com/ScriptReference/AI.NavMesh.AddNavMeshData.html"
+    },
+    "AddNavMeshData": {
+        "prefix": ["an", "am","add", "nav"],
+        "body": [
+            "AddNavMeshData",
+        ],
+        "description": "https://docs.unity3d.com/ScriptReference/AI.NavMesh.AddNavMeshData.html"
+    },
+    "CalculatePath": {
+        "prefix": ["cp", "caculate","path"],
+        "body": [
+            "CalculatePath",
+        ],
+        "description": "https://docs.unity3d.com/ScriptReference/AI.NavMesh.CalculatePath.html"
+    },
+    "CalculateTriangulation": {
+        "prefix": ["ct", "caculate","tri"],
+        "body": [
+            "CalculateTriangulation",
+        ],
+        "description": "https://docs.unity3d.com/ScriptReference/AI.NavMesh.CalculateTriangulation.html"
+    },
+    "CreateSettings": {
+        "prefix": ["cs", "create","settings"],
+        "body": [
+            "CreateSettings",
+        ],
+        "description": "https://docs.unity3d.com/ScriptReference/AI.NavMesh.CreateSettings.html"
+    },
 }
+//CreateSettings
+//CalculateTriangulation
+//CalculatePath
+//AddLink
+//avoidancePredictionTime
 //onPreUpdate
 //avoidancePredictionTime
 //GetColorBlindSafePalette
