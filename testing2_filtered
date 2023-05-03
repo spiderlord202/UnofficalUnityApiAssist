@@ -105,7 +105,7 @@ Object-operator_ne.html
 Object-operator_eq.html
 Object.Instantiate.html
 UnityEngine.AIModule.html
-../Manual/nav-CreateNavMeshObstacle.html
+/Manual/nav-CreateNavMeshObstacle.html
 AI.NavMeshBuildDebugSettings-flags.html
 AI.NavMeshBuilder.BuildNavMeshData.html
 UnityEngine.AIModule.html
@@ -1506,13 +1506,13 @@ Experimental.AI.NavMeshWorld.GetDefaultWorld.html
 Experimental.AI.NavMeshQuery.html
 UnityEngine.AIModule.html
 Experimental.AI.PolygonId.GetHashCode.html
-../Manual/class-NavMeshSurface.html
+/Manual/class-NavMeshSurface.html
 Experimental.AI.PolygonId.Equals.html
 Experimental.AI.PolygonId.IsNull.html
 Experimental.AI.PolygonId-operator_ne.html
 Experimental.AI.PolygonId-operator_eq.html
 Experimental.AI.NavMeshPolyTypes.Ground.html
-../Manual/class-NavMeshSurface.html
+/Manual/class-NavMeshSurface.html
 Experimental.AI.NavMeshPolyTypes.OffMeshConnection.html
 Experimental.AI.PathQueryStatus.Failure.html
 Experimental.AI.PathQueryStatus.StatusDetailMask.html
@@ -1829,7 +1829,7 @@ Experimental.Rendering.GraphicsFormat.R8_UNorm.html
 Experimental.Rendering.GraphicsFormat.R8G8_UNorm.html
 Experimental.Rendering.GraphicsFormat.R8G8B8A8_UNorm.html
 Experimental.Rendering.GraphicsFormat.R8G8B8_UNorm.html
-../Manual/Textures.html
+/Manual/Textures.html
 Experimental.Rendering.GraphicsFormat.R8_SNorm.html
 Experimental.Rendering.GraphicsFormat.R8G8_SNorm.html
 Experimental.Rendering.GraphicsFormat.R8G8B8A8_SNorm.html
@@ -3361,7 +3361,7 @@ Rendering.BatchVisibility-offset.html
 Rendering.BatchVisibility-visibleCount.html
 Rendering.BatchVisibility-instancesCount.html
 UnityEngine.CoreModule.html
-../Manual/SL-Blend.html
+/Manual/SL-Blend.html
 Rendering.BlendState-alphaToMask.html
 Rendering.BlendState-defaultValue.html
 Rendering.BlendState-blendState2.html
@@ -3607,8 +3607,8 @@ Rendering.LocalKeyword-ctor.html
 Rendering.LocalKeyword-operator_eq.html
 UnityEngine.CoreModule.html
 ComputeShader.html
-../Manual/shader-keywords-scripts.html
-../Manual/SL-UsePass.html
+/Manual/shader-keywords-scripts.html
+/Manual/SL-UsePass.html
 mono
 Rendering.LocalKeywordSpace-keywordCount.html
 Rendering.LocalKeywordSpace-keywordNames.html
@@ -3785,7 +3785,7 @@ Rendering.RenderTargetBinding-ctor.html
 Rendering.RenderTargetBlendState-defaultValue.html
 UnityEngine.CoreModule.html
 Rendering.RenderTargetBlendState-alphaBlendOperation.html
-../Manual/SL-Blend.html
+/Manual/SL-Blend.html
 Rendering.RenderTargetBlendState-destinationColorBlendMode.html
 Rendering.RenderTargetBlendState-colorBlendOperation.html
 Rendering.RenderTargetBlendState-sourceAlphaBlendMode.html
@@ -4078,7 +4078,7 @@ Rendering.VisibleReflectionProbe-reflectionProbe.html
 Rendering.VisibleReflectionProbe-hdrData.html
 Rendering.VisibleReflectionProbe-texture.html
 Rendering.AmbientMode.Skybox.html
-../Manual/GlobalIllumination.html
+/Manual/GlobalIllumination.html
 Rendering.AmbientMode.Trilight.html
 Rendering.AmbientMode.Custom.html
 Rendering.AmbientMode.Flat.html
@@ -4267,7 +4267,7 @@ Rendering.CullingOptions.ShadowCasters.html
 Rendering.CullMode.Front.html
 Rendering.CullMode.Back.html
 Rendering.CullMode.Off.html
-../Manual/GlobalIllumination.html
+/Manual/GlobalIllumination.html
 Rendering.DefaultReflectionMode.Skybox.html
 Rendering.DefaultReflectionMode.Custom.html
 Rendering.DistanceMetric.Perspective.html
@@ -4342,7 +4342,7 @@ Rendering.OpenGLESVersion.OpenGLES31.html
 Rendering.OpenGLESVersion.OpenGLES32.html
 Rendering.OpenGLESVersion.None.html
 Rendering.PassType.Normal.html
-../Manual/SL-PassTags.html
+/Manual/SL-PassTags.html
 Rendering.PassType.Vertex.html
 Rendering.PassType.VertexLM.html
 Rendering.PassType.ForwardBase.html
@@ -5289,7 +5289,7 @@ Collider2D.OnCollisionStay2D.html
 Collider2D.OnTriggerExit2D.html
 Renderer.html
 UnityEngine.TilemapModule.html
-../Manual/script-GridLayoutGroup.html
+/Manual/script-GridLayoutGroup.html
 Tilemaps.TilemapRenderer-chunkCullingBounds.html
 Tilemaps.TilemapRenderer-chunkSize.html
 Tilemaps.TilemapRenderer-detectChunkCullingBounds.html
@@ -5371,7 +5371,7 @@ Renderer.OnBecameVisible.html
 Object-operator_eq.html
 Tilemaps.TilemapRenderer.DetectChunkCullingBounds.Manual.html
 Tilemaps.TilemapRenderer.DetectChunkCullingBounds.Auto.html
-../Manual/Sprites.html
+/Manual/Sprites.html
 Tilemaps.TilemapRenderer.Mode.Individual.html
 Tilemaps.TilemapRenderer.Mode.Chunk.html
 Tilemaps.TilemapRenderer.SortOrder.BottomRight.html
@@ -15663,7 +15663,7 @@ ArticulationReducedSpace-dofCount.html
 ArticulationReducedSpace-ctor.html
 Object.html
 UnityEngine.AssetBundleModule.html
-../Manual/LoadingResourcesatRuntime.html
+/Manual/LoadingResourcesatRuntime.html
 Networking.DownloadHandlerAssetBundle.GetContent.html
 AssetBundle-isStreamedSceneAssetBundle.html
 AssetBundle-memoryBudgetKB.html
@@ -15958,7 +15958,7 @@ Object-operator_ne.html
 Object-operator_eq.html
 Behaviour.html
 UnityEngine.AudioModule.html
-../Manual/class-AudioListener.html
+/Manual/class-AudioListener.html
 AudioListener-pause.html
 AudioListener-volume.html
 AudioListener-velocityUpdateMode.html
@@ -16750,7 +16750,7 @@ Behaviour.html
 UnityEngine.CoreModule.html
 Camera-allCamerasCount.html
 Camera-allCameras.html
-../Manual/class-Camera.html
+/Manual/class-Camera.html
 Camera-current.html
 Camera-onPostRender.html
 Camera-activeTexture.html
@@ -17871,7 +17871,7 @@ CompositeCollider2D.GenerationType.Manual.html
 CompositeCollider2D.GeometryType.Polygons.html
 CompositeCollider2D.GeometryType.Outlines.html
 UnityEngine.CoreModule.html
-../Manual/class-ComputeShader.html
+/Manual/class-ComputeShader.html
 ComputeBuffer-count.html
 ComputeBuffer-name.html
 ComputeBuffer-stride.html
@@ -17887,7 +17887,7 @@ ComputeBuffer.SetCounterValue.html
 ComputeBuffer.CopyCount.html
 UnityEngine.CoreModule.html
 Object.html
-../Manual/class-ComputeShader.html
+/Manual/class-ComputeShader.html
 ComputeShader-shaderKeywords.html
 ComputeShader-enabledKeywords.html
 ComputeShader-keywordSpace.html
@@ -18799,7 +18799,7 @@ UnityEngine.IMGUIModule.html
 UnityEngine.CoreModule.html
 UnityEngine.CoreModule.html
 Playables.PlayableAsset.html
-../Manual/TimelineWorkflowRecordingBasicAnimation.html
+/Manual/TimelineWorkflowRecordingBasicAnimation.html
 SceneManagement.Scene.html
 Playables.Playable.html
 GameObject.html
@@ -18910,7 +18910,7 @@ Joint2D.OnJointBreak2D.html
 Object-operator_ne.html
 Object.html
 UnityEngine.CoreModule.html
-../Manual/class-Flare.html
+/Manual/class-Flare.html
 Object-hideFlags.html
 Object-name.html
 Object.GetInstanceID.html
@@ -20713,7 +20713,7 @@ MatchTargetWeightMask-ctor.html
 MatchTargetWeightMask-positionXYZWeight.html
 Object.html
 UnityEngine.CoreModule.html
-../Manual/Materials.html
+/Manual/Materials.html
 Material-color.html
 Material-doubleSidedGI.html
 Material-enabledKeywords.html
@@ -21144,7 +21144,7 @@ Collider.OnTriggerStay.html
 Collider.OnTriggerExit.html
 Object-operator_eq.html
 UnityEngine.CoreModule.html
-../Manual/class-MeshFilter.html
+/Manual/class-MeshFilter.html
 MeshFilter-mesh.html
 MeshFilter-sharedMesh.html
 Component-tag.html
@@ -21303,7 +21303,7 @@ ModifiableMassProperties-otherInverseMassScale.html
 Behaviour.html
 UnityEngine.CoreModule.html
 MonoBehaviour-runInEditMode.html
-../Manual/DeactivatingGameObjects.html
+/Manual/DeactivatingGameObjects.html
 MonoBehaviour.CancelInvoke.html
 MonoBehaviour-useGUILayout.html
 MonoBehaviour.IsInvoking.html
@@ -21493,7 +21493,7 @@ UnityEngine.CoreModule.html
 UnityEngine.CoreModule.html
 Behaviour.html
 Behaviour-enabled.html
-../Manual/class-NetworkView.html
+/Manual/class-NetworkView.html
 Behaviour-isActiveAndEnabled.html
 UnityEngine.CoreModule.html
 Component-tag.html
@@ -22775,7 +22775,7 @@ Object-operator_ne.html
 Object.Instantiate.html
 PlayerPrefs.DeleteAll.html
 UnityEngine.CoreModule.html
-../Manual/class-PlayerSettings.html
+/Manual/class-PlayerSettings.html
 PlayerPrefs.GetFloat.html
 PlayerPrefs.DeleteKey.html
 PlayerPrefs.GetInt.html
@@ -23329,7 +23329,7 @@ RectOffset.Add.html
 RectOffset-top.html
 RectOffset.ToString.html
 RectOffset.Remove.html
-../Manual/UIBasicLayout.html
+/Manual/UIBasicLayout.html
 Transform.html
 UnityEngine.CoreModule.html
 RectTransform-anchoredPosition.html
@@ -23597,8 +23597,8 @@ Graphics.SetRenderTarget.html
 RenderBuffer.GetNativeRenderBufferPtr.html
 Component.html
 UnityEngine.CoreModule.html
-../Manual/class-MeshRenderer.html
-../Manual/class-TrailRenderer.html
+/Manual/class-MeshRenderer.html
+/Manual/class-TrailRenderer.html
 Renderer-bounds.html
 Renderer-allowOcclusionWhenDynamic.html
 Renderer-forceRenderingOff.html
@@ -24337,7 +24337,7 @@ Object-operator_eq.html
 Renderer.OnBecameInvisible.html
 UnityEngine.CoreModule.html
 Behaviour.html
-../Manual/class-Skybox.html
+/Manual/class-Skybox.html
 Behaviour-isActiveAndEnabled.html
 Behaviour-enabled.html
 Skybox-material.html
@@ -24972,7 +24972,7 @@ Behaviour.html
 StreamingController.SetPreloading.html
 StreamingController-streamingMipmapBias.html
 StreamingController.CancelPreloading.html
-../Manual/class-Camera.html
+/Manual/class-Camera.html
 StreamingController.SetPreloading.html
 StreamingController.IsPreloading.html
 Behaviour-enabled.html
@@ -27082,7 +27082,7 @@ EffectorForceMode2D.InverseSquared.html
 EffectorForceMode2D.InverseLinear.html
 EffectorSelection2D.Collider.html
 EffectorSelection2D.Rigidbody.html
-../Manual/GUIScriptingGuide.html
+/Manual/GUIScriptingGuide.html
 EventModifiers.Shift.html
 EventModifiers.Control.html
 EventModifiers.None.html
@@ -27125,7 +27125,7 @@ FFTWindow.Triangle.html
 FFTWindow.Blackman.html
 FFTWindow.Hanning.html
 FFTWindow.BlackmanHarris.html
-../Manual/Textures.html
+/Manual/Textures.html
 Scripting.GarbageCollector.Mode.html
 Texture.html
 Texture.html
@@ -27155,7 +27155,7 @@ FocusType.Keyboard.html
 FocusType.Passive.html
 FogMode.Exponential.html
 FogMode.Linear.html
-../Manual/GlobalIllumination.html
+/Manual/GlobalIllumination.html
 FogMode.ExponentialSquared.html
 FontStyle.Italic.html
 FontStyle.Normal.html
@@ -27692,7 +27692,7 @@ LightShadows.Soft.html
 LightShape.Pyramid.html
 LightShape.Box.html
 LightShape.Cone.html
-../Manual/class-Light.html
+/Manual/class-Light.html
 LightType.Directional.html
 LightType.Point.html
 LightType.Spot.html
@@ -27973,7 +27973,7 @@ QueryTriggerInteraction.UseGlobal.html
 QueryTriggerInteraction.Collide.html
 QueueMode.PlayNow.html
 QueueMode.CompleteOthers.html
-../Manual/class-LightingSettings.html#RealtimeLighting.html
+/Manual/class-LightingSettings.html#RealtimeLighting.html
 ReceiveGI.LightProbes.html
 ReceiveGI.Lightmaps.html
 RenderingPath.UsePlayerSettings.html
@@ -28033,7 +28033,7 @@ RenderTextureMemoryless.MSAA.html
 RenderTextureReadWrite.Default.html
 RenderTextureFormat.html
 RenderTextureReadWrite.Default.html
-../Manual/LinearLighting.html
+/Manual/LinearLighting.html
 RenderTextureReadWrite-sRGB.html
 RenderTextureReadWrite.Linear.html
 Rigidbody.html
@@ -36711,7 +36711,7 @@ Profiling.RawFrameDataView.FlowEvent.ParentSampleIndex.html
 Profiling.RawFrameDataView.FlowEvent.FlowEventType.html
 Profiling.RawFrameDataView.FlowEvent.FlowId.html
 Profiling.IProfilerFrameTimeViewSampleSelectionController-focusedThreadIndex.html
-../Manual/ProfilerCPU.html
+/Manual/ProfilerCPU.html
 Profiling.IProfilerFrameTimeViewSampleSelectionController-sampleNameSearchFilter.html
 Profiling.IProfilerFrameTimeViewSampleSelectionController-selection.html
 Profiling.IProfilerFrameTimeViewSampleSelectionController.ClearSelection.html
@@ -36738,7 +36738,7 @@ Rendering.ShaderSnippetData-passName.html
 Rendering.ShaderSnippetData-pass.html
 Rendering.ShaderSnippetData-passType.html
 Rendering.ShaderSnippetData-shaderType.html
-../Manual/graphics-tiers.html
+/Manual/graphics-tiers.html
 Rendering.TierSettings-cascadedShadowMaps.html
 Rendering.TierSettings-detailNormalMap.html
 Rendering.TierSettings-enableLPPV.html
@@ -36753,8 +36753,8 @@ Rendering.TierSettings-semitransparentShadows.html
 Rendering.TierSettings-standardShaderQuality.html
 Rendering.ShaderCompilerMessageSeverity.Error.html
 Rendering.ShaderCompilerMessageSeverity.Warning.html
-../Manual/SL-ShadingLanguage.html
-../Manual/SL-ShadingLanguage.html
+/Manual/SL-ShadingLanguage.html
+/Manual/SL-ShadingLanguage.html
 Rendering.ShaderCompilerPlatform.D3D.html
 Rendering.ShaderCompilerPlatform.None.html
 Rendering.ShaderCompilerPlatform.GLES20.html
@@ -45614,7 +45614,7 @@ ManagedReferenceMissingType-assemblyName.html
 ManagedReferenceMissingType-referenceId.html
 ManagedReferenceMissingType-namespaceName.html
 ManagedReferenceMissingType-serializedData.html
-../Manual/SL-Shader.html
+/Manual/SL-Shader.html
 Editor.html
 MaterialEditor-kMiniTextureFieldLabelIndentLevel.html
 MaterialEditor-customShaderGUI.html
@@ -46789,7 +46789,7 @@ PrimitiveType.Cube.html
 PrefabUtility.EditPrefabContentsScope-assetPath.html
 PrefabUtility.EditPrefabContentsScope-ctor.html
 IHasCustomMenu.html
-../Manual/ProfilerWindow.html
+/Manual/ProfilerWindow.html
 EditorWindow.html
 ProfilerWindow-cpuModuleIdentifier.html
 ProfilerWindow-selectedFrameIndex.html
@@ -49189,7 +49189,7 @@ FilePathAttribute.Location.ProjectFolder.html
 FilePathAttribute.Location.PreferencesFolder.html
 Entering 
 Entering 
-../Manual/Preferences.html
+/Manual/Preferences.html
 Project loaded in Unity 
 Rendering.ScriptableRenderPipelineExtensionAttribute.html
 LightingExplorerExtensionAttribute-ctor.html
@@ -50516,7 +50516,7 @@ Unity.Profiling.Editor.ProfilerCounterDescriptor.Name.html
 Unity.Profiling.Editor.ProfilerCounterDescriptor.CategoryName.html
 GC Used Memory
 Unity.Profiling.Editor.ProfilerCounterDescriptor-ctor.html
-../Manual/SpecialFolders.html
+/Manual/SpecialFolders.html
 Rendering.VirtualTexturing.System.html
 Unity.Profiling.Editor.ProfilerCounterDescriptor.html
 GC Reserved Memory
@@ -50669,7 +50669,7 @@ Unity.Profiling.ProfilerMarker.End.html
 UnityEngine.CoreModule.html
 Unity.Profiling.ProfilerMarker.html
 Unity.Profiling.ProfilerMarker.Begin.html
-../Manual/ProfilerRendering.html
+/Manual/ProfilerRendering.html
 UnityEngine.CoreModule.html
 Unity.Profiling.ProfilerRecorder.html
 Unity.Profiling.ProfilerCategory.Memory.html
