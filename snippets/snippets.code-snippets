@@ -1008,7 +1008,123 @@
         ],
         "description": "https://docs.unity3d.com/ScriptReference/AI.NavMesh.CreateSettings.html"
     },
+    "FindClosestEdge": {
+        "prefix": ["fc", "fce","fe", "find", "closest"],
+        "body": [
+            "FindClosestEdge",
+        ],
+        "description": "https://docs.unity3d.com/ScriptReference/AI.NavMesh.FindClosestEdge.html"
+    },
+    "GetAreaCost": {
+        "prefix": ["ga", "gac","gc", "area", "cost"],
+        "body": [
+            "GetAreaCost",
+        ],
+        "description": "https://docs.unity3d.com/ScriptReference/AI.NavMesh.GetAreaCost.html"
+    },
+    "GetAreaFromName": {
+        "prefix": ["ga", "gafn","gf", "get", "name"],
+        "body": [
+            "GetAreaFromName",
+        ],
+        "description": "https://docs.unity3d.com/ScriptReference/AI.NavMesh.GetAreaFromName.html"
+    },
+    "GetSettingsByID": {
+        "prefix": ["gs", "gsbi","gb", "get", "id", "name"],
+        "body": [
+            "GetAreaFromName",
+        ],
+        "description": "https://docs.unity3d.com/ScriptReference/AI.NavMesh.GetSettingsByID.html"
+    },
+    "GetSettingsByIndex": {
+        "prefix": ["gs", "gsbi","gb", "get", "ide"],
+        "body": [
+            "GetAreaFromName",
+        ],
+        "description": "https://docs.unity3d.com/ScriptReference/AI.NavMesh.GetSettingsByIndex.html"
+    },
+    "GetSettingsCount": {
+        "prefix": ["gs", "gsc", "get", "count"],
+        "body": [
+            "GetSettingsCount",
+        ],
+        "description": "https://docs.unity3d.com/ScriptReference/AI.NavMesh.GetSettingsCount.html"
+    },
+    "GetSettingsNameFromID": {
+        "prefix": ["gs", "gsnfi", "get", "name", "id"],
+        "body": [
+            "GetSettingsNameFromID",
+        ],
+        "description": "https://docs.unity3d.com/ScriptReference/AI.NavMesh.GetSettingsNameFromID.html"
+    },
+    "Raycast": {
+        "prefix": ["ray", "cast", "rc",],
+        "body": [
+            "Raycast",
+        ],
+        "description": "https://docs.unity3d.com/ScriptReference/AI.NavMesh.Raycast.html"
+    },
+    "Log End": {
+        "prefix": ["Debug.", "Debug", "De"],
+        "body": [
+            "Debug.Log()",
+        ],
+        "description": "https://docs.unity3d.com/ScriptReference/Debug.Log.html"
+    },
+    "RemoveAllNavMeshData": {
+        "prefix": ["ravmd", "rmd", "remove", "mesh"],
+        "body": [
+            "RemoveAllNavMeshData",
+        ],
+        "description": "https://docs.unity3d.com/ScriptReference/AI.NavMesh.RemoveAllNavMeshData.html"
+    },
+    "RemoveLink": {
+        "prefix": ["rl", "link", "remove",],
+        "body": [
+            "RemoveLink",
+        ],
+        "description": "https://docs.unity3d.com/ScriptReference/AI.NavMesh.RemoveLink.html"
+    },
+    "RemoveNavMeshData": {
+        "prefix": ["rnmd", "rd", "mesh","data", "remove"],
+        "body": [
+            "RemoveNavMeshData",
+        ],
+        "description": "https://docs.unity3d.com/ScriptReference/AI.NavMesh.RemoveNavMeshData.html"
+    },
+    "RemoveSettings": {
+        "prefix": ["rs", "rem","settings", "remove"],
+        "body": [
+            "RemoveSettings",
+        ],
+        "description": "https://docs.unity3d.com/ScriptReference/AI.NavMesh.RemoveSettings.html"
+    },
+    "SamplePosition": {
+        "prefix": ["sp", "sample","pos", "position"],
+        "body": [
+            "SamplePosition",
+        ],
+        "description": "https://docs.unity3d.com/ScriptReference/AI.NavMesh.SamplePosition.html"
+    },
+    "SetAreaCost": {
+        "prefix": ["sac", "set","area", "cost"],
+        "body": [
+            "SetAreaCost",
+        ],
+        "description": "https://docs.unity3d.com/ScriptReference/AI.NavMesh.SetAreaCost.html"
+    },
 }
+//SetAreaCost
+//SamplePosition
+//RemoveSettings
+//RemoveNavMeshData
+//RemoveLink
+//https://docs.unity3d.com/ScriptReference/AI.NavMesh.RemoveAllNavMeshData.html
+//Raycast
+//GetSettingsByID
+//GetAreaFromName
+//GetAreaCost
+//FindClosestEdge
 //CreateSettings
 //CalculateTriangulation
 //CalculatePath
