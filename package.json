@@ -1,11 +1,19 @@
 {
+<<<<<<< HEAD
   "name": "unofficalunityapiassist",
   "displayName": "Unoffical Unity Api Assist",
   "description": "A snippit helper in alot of api keywords",
+=======
+  "type": "module",
+  "name": "unofficalunityapiassistportal",
+  "displayName": "UnofficalUnityApiAssistPortal",
+  "description": "This loads the UnofficalUntiyApiAssist to help suggest api words and overral makes your time with unity easier",
+>>>>>>> 9165f8c (E)
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.77.0"
   },
+<<<<<<< HEAD
   "repository": {
     "type": "git",
     "url": "https://github.com/spiderlord202/UnofficalUnityApiAssist.git"
@@ -21,5 +29,48 @@
         "path": "./snippets/snippets.code-snippets"
       }
     ]
+=======
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:unofficalunityapiportal.helloWorld",
+    "onCommand:unofficalunityapiportal.build"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "unofficalunityapiassistportal.helloWorld",
+        "title": "Hello World"
+      },
+      {
+        "command": "unofficalunityapiassistportal.build",
+        "title": "build"
+      }
+    ]
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "test": "node ./test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/glob": "^8.1.0",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "16.x",
+    "@types/vscode": "^1.77.0",
+    "@vscode/test-electron": "^2.3.0",
+    "eslint": "^8.39.0",
+    "glob": "^8.1.0",
+    "mocha": "^10.2.0",
+    "typescript": "^5.0.4"
+  },
+  "dependencies": {
+    "inquirer": "^9.2.1",
+    "jsonfile": "^6.1.0",
+    "jsonpath": "^1.1.1",
+    "string-natural-compare": "^3.0.1"
+>>>>>>> 9165f8c (E)
   }
 }

@@ -1,0 +1,266 @@
+created
+created
+
+		if (answers.action === "view"){
+			if (Object.keys(seedata[path[0]][answers.selectedItem]).length > 0){ 
+		objselect(seedata[path[0]][answers.selectedItem])
+		path.push(answers.selectedItem[i])
+			}
+		 } else {
+			SelectedSafekeep.push(answers.selectedItem[i])
+			objselect(Object.keys(path[0]).map(
+				(item) => 
+				{if (item === answers.selectedItem[i] || SelectedSafekeep.indexOf(item) != -1) 
+					{if (item === answers.selectedItem[i] && SelectedSafekeep.indexOf(item) != -1)
+						{
+							SelectedSafekeep.splice(SelectedSafekeep.indexOf(item)); 
+								return selectedText(item)} else { return selectedText(item);
+							}} else {return item; }}));
+			iteration -= 1
+		}
+created
+created
+created
+undefined
+
+		if (answers.action === "view"){
+			if (Object.keys(seedata[path[0]][answers.selectedItem]).length > 0){ 
+		objselect(seedata[path[0]][answers.selectedItem])
+		path.push(answers.selectedItem[i])
+			}
+		 } else {
+			SelectedSafekeep.push(answers.selectedItem[i])
+			objselect(Object.keys(path[0]).map(
+				(item) => 
+				{if (item === answers.selectedItem[i] || SelectedSafekeep.indexOf(item) != -1) 
+					{if (item === answers.selectedItem[i] && SelectedSafekeep.indexOf(item) != -1)
+						{
+							SelectedSafekeep.splice(SelectedSafekeep.indexOf(item)); 
+								return selectedText(item)} else { return selectedText(item);
+							}} else {return item; }}));
+			iteration -= 1
+		}
+created
+
+
+		if (answers.action === "view"){
+			if (Object.keys(seedata[path[0]][answers.selectedItem]).length > 0){ 
+		objselect(seedata[path[0]][answers.selectedItem])
+		path.push(answers.selectedItem[i])
+			}
+		 } else {
+			SelectedSafekeep.push(answers.selectedItem[i])
+			objselect(Object.keys(path[0]).map(
+				(item) => 
+				{if (item === answers.selectedItem[i] || SelectedSafekeep.indexOf(item) != -1) 
+					{if (item === answers.selectedItem[i] && SelectedSafekeep.indexOf(item) != -1)
+						{
+							SelectedSafekeep.splice(SelectedSafekeep.indexOf(item)); 
+								return selectedText(item)} else { return selectedText(item);
+							}} else {return item; }}));
+			iteration -= 1
+		}
+created
+Path: 
+
+		if (answers.action === "view"){
+			if (Object.keys(seedata[path[0]][answers.selectedItem]).length > 0){ 
+		objselect(seedata[path[0]][answers.selectedItem])
+		path.push(answers.selectedItem[i])
+			}
+		 } else {
+			SelectedSafekeep.push(answers.selectedItem[i])
+			objselect(Object.keys(path[0]).map(
+				(item) => 
+				{if (item === answers.selectedItem[i] || SelectedSafekeep.indexOf(item) != -1) 
+					{if (item === answers.selectedItem[i] && SelectedSafekeep.indexOf(item) != -1)
+						{
+							SelectedSafekeep.splice(SelectedSafekeep.indexOf(item)); 
+								return selectedText(item)} else { return selectedText(item);
+							}} else {return item; }}));
+			iteration -= 1
+		}
+created
+created
+created
+created
+created
+created
+created
+$
+[object Object]
+created
+created
+created
+created
+created
+created
+created
+created
+created
+created
+created
+created
+created
+created
+created
+created
+created
+created
+created
+created
+created
+created
+created
+created
+created
+created
+created
+created
+created
+created
+created
+created
+created
+created
+created
+created
+UnityEngine[SELECTED (check to unselect): UnityEngine][SELECTED (check to unselect): UnityEngine] UnityEngine[SELECTED (check to unselect): UnityEngine] AIcreated
+UnityEngineAIcreated
+created
+created
+UnityEngineUnityEngine UnityEngine      created
+UnityEngineUnityEngine UnityEngine[SELECTED (check to unselect): UnityEngine][SELECTED (check to unselect): UnityEngine] UnityEngine[SELECTED (check to unselect): UnityEngine] UnityEngine UnityEngine[SELECTED (check to unselect): UnityEngine] AI[SELECTED (check to unselect): UnityEngine] AI AI[SELECTED (check to unselect): UnityEngine] created
+$$ $created
+UnityEngineUnityEngine UnityEngine UnityEngine UnityEngine UnityEngine AI AI AI [SELECTED (check to unselect): AI] [SELECTED (check to unselect): AI] UnityEngine [SELECTED (check to unselect): AI] UnityEngine UnityEnginecreated
+UnityEngineUnityEngine END UnityEngine FINAL ENDAIAI END AI FINAL ENDcreated
+UnityEngineUnityEngine END UnityEngine FINAL ENDAIAI END AI FINAL ENDcreated
+UnityEngineUnityEngine END UnityEngine FINAL ENDAIAI END AI FINAL ENDcreated
+ AI,AI END AI FINAL END Component,Component END Component FINAL ENDcreated
+created
+UnityEngineUnityEngine END UnityEngine FINAL ENDUnityEngine [SELECTED (check to unselect): UnityEngine]UnityEngine,[SELECTED (check to unselect): UnityEngine] END UnityEngine FINAL ENDUnityEngine [SELECTED (check to unselect): UnityEngine] [SELECTED (check to unselect): UnityEngine]UnityEngine,[SELECTED (check to unselect): UnityEngine],[SELECTED (check to unselect): UnityEngine] END UnityEngine FINAL ENDUnityEngine [SELECTED (check to unselect): UnityEngine] [SELECTED (check to unselect): UnityEngine] [SELECTED (check to unselect): UnityEngine]UnityEngine,[SELECTED (check to unselect): UnityEngine],[SELECTED (check to unselect): UnityEngine],[SELECTED (check to unselect): UnityEngine] END UnityEngine FINAL ENDUnityEngine [SELECTED (check to unselect): UnityEngine] [SELECTED (check to unselect): UnityEngine] [SELECTED (check to unselect): UnityEngine] AIUnityEngine,[SELECTED (check to unselect): UnityEngine],[SELECTED (check to unselect): UnityEngine],[SELECTED (check to unselect): UnityEngine],AI END UnityEngine FINAL ENDUnityEngine,[SELECTED (check to unselect): UnityEngine],[SELECTED (check to unselect): UnityEngine],[SELECTED (check to unselect): UnityEngine],AI END AI FINAL ENDUnityEngine [SELECTED (check to unselect): UnityEngine] [SELECTED (check to unselect): UnityEngine] [SELECTED (check to unselect): UnityEngine] AI [SELECTED (check to unselect): AI]UnityEngine,[SELECTED (check to unselect): UnityEngine],[SELECTED (check to unselect): UnityEngine],[SELECTED (check to unselect): UnityEngine],AI,[SELECTED (check to unselect): AI] END UnityEngine FINAL ENDUnityEngine,[SELECTED (check to unselect): UnityEngine],[SELECTED (check to unselect): UnityEngine],[SELECTED (check to unselect): UnityEngine],AI,[SELECTED (check to unselect): AI] END AI FINAL ENDcreated
+AIAI END AI FINAL ENDAI ComponentAI,Component END AI FINAL ENDAI,Component END Component FINAL ENDAI Component [SELECTED (check to unselect): AI]AI,Component,[SELECTED (check to unselect): AI] END AI FINAL ENDAI,Component,[SELECTED (check to unselect): AI] END Component FINAL ENDcreated
+UnityEngineUnityEngine END UnityEngine FINAL ENDAIAI END AI FINAL ENDcreated
+UnityEngineUnityEngine END UnityEngine FINAL ENDAIAI END AI FINAL ENDUnityEngineUnityEngine END UnityEngine FINAL ENDcreated
+AIAI END AI FINAL ENDComponentComponent END Component FINAL ENDcreated
+AI AIAI,AI END AI FINAL ENDComponent ComponentComponent,Component END Component FINAL ENDAI AIAI,AI END AI FINAL ENDcreated
+created
+AIAI END AI FINAL ENDComponentComponent END Component FINAL ENDcreated
+ComponentComp END Component FINAL ENDObjectComp,Obj END Object FINAL ENDcreated
+created
+created
+created
+AIAI END AI FINAL ENDComponentComponent END Component FINAL ENDcreated
+created
+ AIAI END AI FINAL END ComponentComponent END Component FINAL ENDcreated
+ UnityEngineUnityEngine END UnityEngine FINAL END AIAI END AI FINAL ENDcreated
+  UnityEngineUnityEngine END UnityEngine FINAL END  AIAI END AI FINAL ENDcreated
+  UnityEngineUnityEngine END UnityEngine FINAL END  AIAI END AI FINAL ENDcreated
+  UnityEngineUnityEngine END UnityEngine FINAL END  AIAI END AI FINAL ENDcreated
+UnityEngine END UnityEngine FINAL ENDComponent END Component FINAL ENDUnityEngine END UnityEngine FINAL ENDcreated
+UnityEngine END UnityEngine FINAL ENDAI END AI FINAL ENDcreated
+UnityEngine END UnityEngine FINAL END0 AI END AI FINAL END0 created
+$ END $ FINAL END0 created
+UnityEngine END UnityEngine FINAL END0 AI END AI FINAL END0 created
+created
+UnityEngine END UnityEngine FINAL END0 AI END AI FINAL END0 created
+UnityEngine END UnityEngine FINAL END0 AI END AI FINAL END0 created
+created
+created
+created
+created
+created
+created
+created
+created
+UnityEngine END UnityEngine FINAL END0 AI END AI FINAL END0 created
+UnityEngine END UnityEngine FINAL END0 UnityEngine,AI END AI FINAL END1 created
+UnityEngine END UnityEngine FINAL END0 UnityEngine,AI END AI FINAL END1 created
+UnityEngine END UnityEngine FINAL END0 AI END AI FINAL END0 UnityEngine END UnityEngine FINAL END0 created
+UnityEngineUnityEngine END UnityEngine FINAL END0 AIAI END AI FINAL END0 created
+UnityEngineAIcreated
+$created
+AIUnityEnginecreated
+UnityEnginecreated
+$created
+UnityEngineAIcreated
+UnityEngineAIComponentAIcreated
+UnityEngineAIcreated
+UnityEngineAIcreated
+UnityEngine END AI END created
+UnityEngine END  END2AI END  END2created
+UnityEngine END  END2AI END  END2created
+UnityEngine END  END2AI END  END2created
+UnityEngineAI END  END2[SELECTED (check to unselect): UnityEngine]created
+UnityEngineAI[SELECTED (check to unselect): UnityEngine][SELECTED (check to unselect): AI]created
+UnityEngineAI END  END2[SELECTED (check to unselect): UnityEngine]created
+created
+created
+UnityEngineAI END  END2[SELECTED (check to unselect): UnityEngine]created
+UnityEngineAIAI END AI END2[SELECTED (check to unselect): UnityEngine][SELECTED (check to unselect): AI]ComponentAI,[SELECTED (check to unselect): UnityEngine],Component END AI,[SELECTED (check to unselect): UnityEngine],Component END2[SELECTED (check to unselect): AI][SELECTED (check to unselect): AI]UnityEngine[SELECTED (check to unselect): UnityEngine][SELECTED (check to unselect): Component]ObjectAI,[SELECTED (check to unselect): UnityEngine],Component,[SELECTED (check to unselect): AI],[SELECTED (check to unselect): AI],[SELECTED (check to unselect): AI],[SELECTED (check to unselect): AI],UnityEngine,UnityEngine,UnityEngine,[SELECTED (check to unselect): UnityEngine],[SELECTED (check to unselect): UnityEngine],[SELECTED (check to unselect): UnityEngine],[SELECTED (check to unselect): Component],[SELECTED (check to unselect): Component],[SELECTED (check to unselect): Component],Object,Object END AI,[SELECTED (check to unselect): UnityEngine],Component,[SELECTED (check to unselect): AI],[SELECTED (check to unselect): AI],[SELECTED (check to unselect): AI],[SELECTED (check to unselect): AI],UnityEngine,UnityEngine,UnityEngine,[SELECTED (check to unselect): UnityEngine],[SELECTED (check to unselect): UnityEngine],[SELECTED (check to unselect): UnityEngine],[SELECTED (check to unselect): Component],[SELECTED (check to unselect): Component],[SELECTED (check to unselect): Component],Object,Object END2created
+$created
+$created
+UnityEngineAIAI END AI END2[SELECTED (check to unselect): AI]ObjectAI,Object END AI,Object END2[SELECTED (check to unselect): Object]AnalyticsAI,Object,[SELECTED (check to unselect): Object],[SELECTED (check to unselect): Object],Analytics END AI,Object,[SELECTED (check to unselect): Object],[SELECTED (check to unselect): Object],Analytics END2[SELECTED (check to unselect): Analytics]created
+UnityEngineAIAI END AI END2[SELECTED (check to unselect): UnityEngine]ComponentAI,Component END AI,Component END2[SELECTED (check to unselect): Component]created
+UnityEngineAIAI END AI END2ComponentComponent END Component END2ObjectObject END Object END2AnalyticsAnalytics END Analytics END2[SELECTED (check to unselect): Object][SELECTED (check to unselect): Analytics]Component[SELECTED (check to unselect): Analytics]created
+UnityEngineAIAI END AI END2[SELECTED (check to unselect): UnityEngine]created
+UnityEngineAIAI END AI END2[SELECTED (check to unselect): AI]created
+UnityEngineAIAI END AI END2[SELECTED (check to unselect): AI]UnityEngineAIAI END AI END2Componentcreated
+UnityEngineAIAI END AI END2[SELECTED (check to unselect): UnityEngine][SELECTED (check to unselect): AI]UnityEngineAIAI END AI END2[SELECTED (check to unselect): AI][SELECTED (check to unselect): AI]created
+UnityEngineAIAI END AI END2[SELECTED (check to unselect): UnityEngine][SELECTED (check to unselect): AI][SELECTED (check to unselect): AI]UnityEngine[SELECTED (check to unselect): UnityEngine]ComponentComponent END Component END2[SELECTED (check to unselect): UnityEngine]created
+UnityEngineAIAI END AI END2[SELECTED (check to unselect): UnityEngine][SELECTED (check to unselect): AI]UnityEngine[SELECTED (check to unselect): UnityEngine]ComponentAI,[SELECTED (check to unselect): UnityEngine],[SELECTED (check to unselect): AI],UnityEngine,UnityEngine,[SELECTED (check to unselect): UnityEngine],[SELECTED (check to unselect): UnityEngine],Component END AI,[SELECTED (check to unselect): UnityEngine],[SELECTED (check to unselect): AI],UnityEngine,UnityEngine,[SELECTED (check to unselect): UnityEngine],[SELECTED (check to unselect): UnityEngine],Component END2[SELECTED (check to unselect): UnityEngine]created
+UnityEngineAIAI END AI END2ComponentComponent END Component END2[SELECTED (check to unselect): AI]created
+UnityEngineAIAI END AI END2[SELECTED (check to unselect): UnityEngine][SELECTED (check to unselect): AI]ComponentObjectObject END Object END2AnalyticsAnalytics END Analytics END2AndroidAndroid END Android END2ObjectUnityEngineComponentAndroid,Object,Object,UnityEngine,UnityEngine,Component END Android,Object,Object,UnityEngine,UnityEngine,Component END2AnalyticsAndroid,Object,Object,UnityEngine,UnityEngine,Component,Component,Component,Analytics,Analytics END Android,Object,Object,UnityEngine,UnityEngine,Component,Component,Component,Analytics,Analytics END2created
+UnityEngineAIAI END AI END2[SELECTED (check to unselect): AI][SELECTED (check to unselect): AI]ComponentAI,[SELECTED (check to unselect): AI],Component END AI,[SELECTED (check to unselect): AI],Component END2UnityEngineObjectAI,[SELECTED (check to unselect): AI],Component,UnityEngine,UnityEngine,UnityEngine,Object,Object END AI,[SELECTED (check to unselect): AI],Component,UnityEngine,UnityEngine,UnityEngine,Object,Object END2[SELECTED (check to unselect): UnityEngine][SELECTED (check to unselect): UnityEngine][SELECTED (check to unselect): UnityEngine]created
+UnityEngineAIAI END AI END2[SELECTED (check to unselect): UnityEngine][SELECTED (check to unselect): AI][SELECTED (check to unselect): AI]UnityEngine[SELECTED (check to unselect): UnityEngine][SELECTED (check to unselect): AI]created
+UnityEngineAIAI END AI END2[SELECTED (check to unselect): UnityEngine][SELECTED (check to unselect): AI]created
+UnityEngineAIUnityEngineAIcreated
+$created
+UnityEngineAIcreated
+UnityEngineAIAI END AI END2[SELECTED (check to unselect): UnityEngine][SELECTED (check to unselect): AI][SELECTED (check to unselect): AI]ComponentAI,[SELECTED (check to unselect): UnityEngine],[SELECTED (check to unselect): AI],Component END AI,[SELECTED (check to unselect): UnityEngine],[SELECTED (check to unselect): AI],Component END2[SELECTED (check to unselect): AI][SELECTED (check to unselect): Component]created
+UnityEngineAIAI END AI END2[SELECTED (check to unselect): UnityEngine][SELECTED (check to unselect): AI]created
+UnityEngineAIAI END AI END2[SELECTED (check to unselect): AI][SELECTED (check to unselect): AI][SELECTED (check to unselect): AI]created
+UnityEngineAIAI END AI END2[SELECTED (check to unselect): UnityEngine][SELECTED (check to unselect): AI]created
+UnityEngineAIAI END AI END2[SELECTED (check to unselect): UnityEngine][SELECTED (check to unselect): AI]UnityEngineAIAI END AI END2ComponentComponent END Component END2UnityEngineAIAI END AI END2ComponentComponent END Component END2[SELECTED (check to unselect): Component][SELECTED (check to unselect): Component]UnityEngineAIAI END AI END2ComponentComponent END Component END2[SELECTED (check to unselect): Component]created
+AIModuleUnityAnalyticsModuleUnityAnalyticsModule END UnityAnalyticsModule END2AndroidJNIModuleAndroidJNIModule END AndroidJNIModule END2[SELECTED (check to unselect): UnityAnalyticsModule][SELECTED (check to unselect): AndroidJNIModule]created
+UnityEngineAIAI END AI END2ComponentComponent END Component END2[SELECTED (check to unselect): AI]created
+AIUnityEngineAIAI END AI END2ComponentComponent END Component END2[SELECTED (check to unselect): Component]created
+UnityEngineAIComponentAIcreated
+UnityEngineAIAI END AI END2[SELECTED (check to unselect): UnityEngine][SELECTED (check to unselect): AI][SELECTED (check to unselect): AI][SELECTED (check to unselect): AI][SELECTED (check to unselect): AI]UnityEngine[SELECTED (check to unselect): UnityEngine][SELECTED (check to unselect): UnityEngine]created
+UnityEngineAIAI END AI END2[SELECTED (check to unselect): UnityEngine][SELECTED (check to unselect): AI]created
+UnityEngineAIComponent[SELECTED (check to unselect): Component]UnityEngineAI[SELECTED (check to unselect): AI]created
+$created
+UnityEngineAIUnityEngine[SELECTED (check to unselect): UnityEngine]created
+UnityEngineAIcreated
+$created
+UnityEngineAIAI END AI END2[SELECTED (check to unselect): UnityEngine][SELECTED (check to unselect): AI]created
+UnityEngineAIAI END AI END2[SELECTED (check to unselect): AI][SELECTED (check to unselect): AI]created
+$created
+UnityEngineAIAI END AI END2[SELECTED (check to unselect): UnityEngine][SELECTED (check to unselect): AI]UnityEngine[SELECTED (check to unselect): UnityEngine]ComponentAI,[SELECTED (check to unselect): UnityEngine],[SELECTED (check to unselect): AI],UnityEngine,UnityEngine,[SELECTED (check to unselect): UnityEngine],[SELECTED (check to unselect): UnityEngine],Component END AI,[SELECTED (check to unselect): UnityEngine],[SELECTED (check to unselect): AI],UnityEngine,UnityEngine,[SELECTED (check to unselect): UnityEngine],[SELECTED (check to unselect): UnityEngine],Component END2ObjectAI,[SELECTED (check to unselect): UnityEngine],[SELECTED (check to unselect): AI],UnityEngine,UnityEngine,[SELECTED (check to unselect): UnityEngine],[SELECTED (check to unselect): UnityEngine],Component,Object,Object END AI,[SELECTED (check to unselect): UnityEngine],[SELECTED (check to unselect): AI],UnityEngine,UnityEngine,[SELECTED (check to unselect): UnityEngine],[SELECTED (check to unselect): UnityEngine],Component,Object,Object END2created
+UnityEngineAIAI END AI END2[SELECTED (check to unselect): UnityEngine][SELECTED (check to unselect): AI]UnityEngineComponentAI,[SELECTED (check to unselect): UnityEngine],[SELECTED (check to unselect): AI],UnityEngine,UnityEngine,Component END AI,[SELECTED (check to unselect): UnityEngine],[SELECTED (check to unselect): AI],UnityEngine,UnityEngine,Component END2[SELECTED (check to unselect): Component]created
+UnityEngineAIAI END AI END2[SELECTED (check to unselect): UnityEngine][SELECTED (check to unselect): AI]UnityEngineComponentAI,[SELECTED (check to unselect): UnityEngine],[SELECTED (check to unselect): AI],UnityEngine,UnityEngine,Component END AI,[SELECTED (check to unselect): UnityEngine],[SELECTED (check to unselect): AI],UnityEngine,UnityEngine,Component END2created
+$created
+UnityEngineAIAI END AI END2[SELECTED (check to unselect): AI][SELECTED (check to unselect): AI]UnityEngineAIAI END AI END2[SELECTED (check to unselect): AI][SELECTED (check to unselect): AI]UnityEngineAIAI END AI END2ComponentComponent END Component END2ObjectAnalyticsAnalytics END Analytics END2AndroidAndroid END Android END2ObjectComponentcreated
+UnityEngineAIAI END AI END2ComponentComponent END Component END2[SELECTED (check to unselect): AI][SELECTED (check to unselect): Component][SELECTED (check to unselect): Component]created
+UnityEngineAIAI END AI END2[SELECTED (check to unselect): UnityEngine][SELECTED (check to unselect): AI][SELECTED (check to unselect): AI][SELECTED (check to unselect): AI]created
+UnityEngineAIAI END AI END2ComponentComponent END Component END2[SELECTED (check to unselect): AI][SELECTED (check to unselect): Component]created
+$created
+UnityEngineAIAI END AI END2[SELECTED (check to unselect): UnityEngine][SELECTED (check to unselect): AI][SELECTED (check to unselect): AI]created
+UnityEngineAIAI END AI END2ComponentComponent END Component END2[SELECTED (check to unselect): AI]created
+UnityEngineAIAI END AI END2[SELECTED (check to unselect): UnityEngine][SELECTED (check to unselect): AI]created
+UnityEngineAIAI END AI END2[SELECTED (check to unselect): UnityEngine][SELECTED (check to unselect): AI]created
+UnityEngineAIAI END AI END2ComponentComponent END Component END2[SELECTED (check to unselect): AI]AIUnityEngineComponentAI,UnityEngine,UnityEngine,Component END AI,UnityEngine,UnityEngine,Component END2[SELECTED (check to unselect): UnityEngine]UnityEngineAIAI END AI END2ComponentComponent END Component END2Objectcreated
+UnityEngineAIAI END AI END2[SELECTED (check to unselect): UnityEngine][SELECTED (check to unselect): AI]UnityEngineAIAI END AI END2ComponentComponent END Component END2[SELECTED (check to unselect): AI]created
+UnityEngineAIAI END AI END2[SELECTED (check to unselect): AI][SELECTED (check to unselect): AI]ComponentAI,[SELECTED (check to unselect): AI],Component END AI,[SELECTED (check to unselect): AI],Component END2ObjectAI,[SELECTED (check to unselect): AI],Component,Object END AI,[SELECTED (check to unselect): AI],Component,Object END2[SELECTED (check to unselect): AI][SELECTED (check to unselect): Component]AIComponent,Object,[SELECTED (check to unselect): AI],[SELECTED (check to unselect): AI],[SELECTED (check to unselect): AI],[SELECTED (check to unselect): Component],[SELECTED (check to unselect): Component],[SELECTED (check to unselect): Component],AI END Component,Object,[SELECTED (check to unselect): AI],[SELECTED (check to unselect): AI],[SELECTED (check to unselect): AI],[SELECTED (check to unselect): Component],[SELECTED (check to unselect): Component],[SELECTED (check to unselect): Component],AI END2created
+UnityEngineAIObjectAIUnityEngineAIComponentcreated
+UnityEngineAIcreated
+UnityEnginecreated
+UnityEngineAIComponent[SELECTED (check to unselect): Component][SELECTED (check to unselect): UnityEngine]AIComponent[SELECTED (check to unselect): Component][SELECTED (check to unselect): UnityEngine][SELECTED (check to unselect): UnityEngine]ComponentAIComponentcreated
+UnityEngineAIComponentComponent[SELECTED (check to unselect): UnityEngine]AIcreated
+UnityEngineAI[SELECTED (check to unselect): AI][SELECTED (check to unselect): UnityEngine][SELECTED (check to unselect): UnityEngine][SELECTED (check to unselect): UnityEngine][SELECTED (check to unselect): UnityEngine]created
+UnityEngineAI[SELECTED (check to unselect): UnityEngine]AIComponentObjectAIComponent[SELECTED (check to unselect): AI][SELECTED (check to unselect): Component]AnalyticsUnityEngine[SELECTED (check to unselect): UnityEngine]created
+UnityEngineAIComponent[SELECTED (check to unselect): Component]UnityEngineAIComponentcreated
+UnityEnginecreated
+UnityEngineAIComponent[SELECTED (check to unselect): Component]created
+UnityEngineAIComponentAI[SELECTED (check to unselect): AI]created
+UnityEngineAIComponent

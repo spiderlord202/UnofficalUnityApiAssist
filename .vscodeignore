@@ -1,4 +1,14 @@
 .vscode/**
 .vscode-test/**
+<<<<<<< HEAD
 .gitignore
 vsc-extension-quickstart.md
+=======
+test/**
+.gitignore
+.yarnrc
+vsc-extension-quickstart.md
+**/jsconfig.json
+**/*.map
+**/.eslintrc.json
+>>>>>>> 9165f8c (E)

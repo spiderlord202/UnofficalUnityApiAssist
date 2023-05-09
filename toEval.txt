@@ -1,0 +1,23 @@
+//NEVER RUN FILE DIRECTLY
+
+//if (iteration == Iteration_Num){
+	if (answers.action === "view"){
+	if (Object.keys(Incrementing_path[answers.selectedItem]).length > 0){ 
+objselect(Incrementing_path[answers.selectedItem])
+path.push(answers.selectedItem[i])
+	}
+ } else {
+	//logStream.write(`Arr: ${SelectedSafekeep}\n${answers.selectedItem[i]}\n${SelectedSafekeep.indexOf(answers.selectedItem[i])}\n`);
+	SelectedSafekeep.push(answers.selectedItem[i])
+	objselect(Object.keys(Incrementing_path).map(
+		(item) => 
+		{if (item === answers.selectedItem[i] || SelectedSafekeep.indexOf(item) != -1) 
+			{if (item === answers.selectedItem[i] && SelectedSafekeep.indexOf(item) != -1)
+				{//logStream.write(`item2: ${item}\n`); 
+					SelectedSafekeep.splice(SelectedSafekeep.indexOf(item)); 
+						return selectedText(item)} else { return `[SELECTED (check to unselect): ${item}]`;
+					}} else {return item; }}));
+	iteration -= 1
+//	logStream.write(`Arr2: ${SelectedSafekeep}\n${answers.selectedItem[i]}\n${SelectedSafekeep.indexOf(answers.selectedItem[i])}\n`);
+}
+//}

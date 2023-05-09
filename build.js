@@ -4,6 +4,7 @@ import fs from 'fs';
 import jsonpath from 'jsonpath';
 import naturalCompare from "string-natural-compare";
 import inquirer from 'inquirer';
+import jsonfile from 'jsonfile';
 //import vm2  from 'vm2';
 //C:\Users\DuttR\unofficalunityapiassistportal\build.js
 
@@ -155,13 +156,21 @@ let iteration = 0;
 let selections = 0;
 let purelyaddedselect = 0;
 //let SelectedSafekeepNew = [];
-let SelectedSafekeepNew = [];
+
 let path = [];
 
 readFile
   .then((seedata) => {
     
     function objselect(keys){
+
+  jsonfile.readFile("")
+  .then(obj => console.dir(obj))
+  .catch(error => console.error(error))
+   
+  //jsonfile.writeFile(file, obj, function (err) {
+    //    if (err) console.error(err)
+      //})
     //  logStream.write(`${Object.keys(keys)}\n`);
   let promt = inquirer
   .prompt([
@@ -251,4 +260,3 @@ rl.question('Enter the build path: ', (buildPath) => {
     rl.close();
   });
   */
-
