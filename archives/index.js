@@ -46,8 +46,7 @@ fs.readFile('testing2classArr.json', (err, data) => {
         if (j == 0) {
           if (!newRes.hasOwnProperty(res_obj[j].expression.value)) {
             newRes[res_obj[j].expression.value] = {};
-          }
-        } else if (j == 1) {
+          }} else if (j == 1) {
           if (!newRes[res_obj[j - 1].expression.value].hasOwnProperty(res_obj[j].expression.value)) {
             newRes[res_obj[j - 1].expression.value][res_obj[j].expression.value] = {};
            /*
