@@ -189,6 +189,19 @@ readFile
   .then((answers) => {
     let i = 0;
 
+
+
+
+
+
+
+
+
+
+
+
+
+
     let pathNum = ['','[path[0]]','[path[0]][path[1]]','[path[0]][path[1]][path[2]]','[path[0]][path[1]][path[2]][path[3]]','[path[0]][path[1]][path[2]][path[3]][path[4]]'][iteration]
 		let code = ` 
 		try {
