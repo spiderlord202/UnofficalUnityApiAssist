@@ -210,6 +210,54 @@ readFile
   }
   Run()
   /*
+
+
+  readFile.then((seedata) => {
+  function objselect(selected, obj) {
+    return new Promise(function (resolve, reject) {
+      let currentkeys = Object.keys(obj);
+      let user = inquirer.prompt([
+        {
+          type: "checkbox",
+          name: "selectedItem",
+          message: "Select an item:",
+          choices: obj.keys,
+        },
+      ]).then((answers) => {
+        if (selected.indexOf(answers.selectedItem[0]) > -1) {
+          selected.push(answers.selectedItem[0]);
+        } else {
+          selected.splice(selected.indexOf(answers.selectedItem[0]), 1);
+        }
+        resolve(); // Resolve the promise when the selection is done
+      });
+    });
+  }
+
+  let selected = [];
+  let current_obj = seedata;
+  async function Run() {
+    while (current_obj instanceof Object) {
+      let action = await inquirer.prompt([
+        {
+          type: "list",
+          name: "action",
+          message: "Select an action:",
+          choices: ["Select", "view", "Select and view", "Back", "Quit"],
+        },
+      ]).then(async (answers) => {
+        if (answers.action == "select") {
+          await objselect(selected, current_obj); // Wait for objselect promise to resolve
+        } else if (answers.action == "view") {
+          current_obj = current_obj[selected[0]];
+        }
+      });
+    }
+  }
+
+  Run();
+});
+
       for key in current_obj:
         if key in selected:
             print("selected: ", key)
