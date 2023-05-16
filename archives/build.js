@@ -6,6 +6,8 @@ import naturalCompare from "string-natural-compare";
 import inquirer from "inquirer";
 import jsonfile from "jsonfile";
 import { toJSON, fromJSON } from "flatted";
+import { resolve } from "path";
+import { rejects } from "assert";
 //import vm2  from 'vm2';
 //C:\Users\DuttR\unofficalunityapiassistportal\build.js
 
@@ -248,161 +250,56 @@ const readFile = new Promise((resolve, reject) => {
   //return exportres;
 });
 
-let selectedText = (selection) => {
-  return `[SELECTED (check to unselect): ${selection}]`;
-};
-
-////node C:\Users\DuttR\unofficalunityapiassistportal\build.js
-let iteration = 0;
-let selections = 0;
-let purelyaddedselect = 0;
-//let SelectedSafekeepNew = [];
-function test() {
-  console.log("test");
-}
 let path = [];
 
-class RecursiveMap extends Map {
-  static fromJSON(any) {
-    return new this(fromJSON(any));
-  }
-  toJSON() {
-    return toJSON([...this.entries()]);
-  }
-}
-
-readFile.then((seedata) => {
-  function objselect(keys) {
-    //jsonfile.writeFile(file, obj, function (err) {
-    //    if (err) console.error(err)
-    //})
-    //  logStream.write(`${Object.keys(keys)}\n`);
-    let promt = inquirer
-      .prompt([
+jsonfile.readFile("Source.json", "utf-8", function (err, seedata) {
+  function objselect(selected, obj) {
+    return new Promise(function (resolve, reject) {
+      let currentkeys = Object.keys(obj);
+      let user = inquirer.prompt([
         {
           type: "checkbox",
           name: "selectedItem",
           message: "Select an item:",
-          choices: keys,
+          choices: obj.keys,
         },
+      ]).then((answers) => {
+        if (selected.indexOf(answers.selectedItem[0]) > -1) {
+          selected.push(answers.selectedItem[0]);
+        } else {
+          selected.splice(selected.indexOf(answers.selectedItem[0]), 1);
+        }
+        resolve(); // Resolve the promise when the selection is done
+      });
+    });
+  }
+
+  let selected = [];
+  let current_obj = seedata;
+  async function Run() {
+    while (current_obj instanceof Object) {
+      await new Promise((resolve, rejects) => {
+      let action = inquirer.prompt([
         {
           type: "list",
           name: "action",
           message: "Select an action:",
-          choices: ["Select", "view", "Select and veiw", "Back", "Quit"],
+          choices: ["Select", "view", "Select and view", "Back", "Quit"],
         },
-      ])
-      .then((answers) => {
-        let i = 0;
-
-        let path = {};
-        // path.a = "";
-        path.PATH = { ...seedata };
-        const recursive = new RecursiveMap();
-        const asString = JSON.stringify(recursive);
-        recursive.set("PATH", path);
-        const asMap = RecursiveMap.fromJSON(JSON.parse(asString));
-
-        const asJson =
-          JSON.stringify(asMap)[JSON.stringify(asMap).indexOf("PATH") + 1];
-        //asMap.get("same") === asMap.get("same").same;
-        console.log(asMap);
-
-        if (answers.action === "view") {
-        } else {
+      ]).then(async (answers) => {
+        if (answers.action == "select") {
+           objselect(selected, current_obj).then(() => resolve())
+        } else if (answers.action == "view") {
+          current_obj = current_obj[selected[0]];
+          resolve()
         }
-        let foo = {e: {b: ""}}
-        let bar = "e"
-        let a = "b"
-        foo[bar][a]
-        /*
-        let pathNum = [
-          "",
-          "[path[0]]",
-          "[path[0]][path[1]]",
-          "[path[0]][path[1]][path[2]]",
-          "[path[0]][path[1]][path[2]][path[3]]",
-          "[path[0]][path[1]][path[2]][path[3]][path[4]]",
-        ][iteration];
-        */
-        if (answers.action === "view") {
-          if (
-            Object.keys(answers.selectedItem).length > 0 &&
-            Object.keys(asJson[answers.selectedItem]).length > 0
-          ) {
-            objselect(Object.keys(asJson[answers.selectedItem]));
-            path.push(answers.selectedItem[i]);
-          } else {
-            objselect(Object.keys(asJson));
-            //? '[0]' : '' || ''
-            iteration -= 1;
-          }
-        } else  if (answers.action == "select"){
-          jsonfile
-            .readFile("Selecteditems.json")
-            .then((obj) => {
-              let workingObj = obj;
-              //  if (!workingObj.hasOwnProperty("SelectionArr")){
-              //  workingObj.SelectionArr = []
-              //}
-              // logStream.write(answers.selectedItem[i])
-              objselect(
-                Object.keys(asJson).map((item) => {
-                  //logStream.write("ITEM: " + item)
-                  //workingObj.build = []
-
-                  //workingObj.build.push(item)
-                  //	jsonfile.writeFile("Selecteditems.json", workingObj, function (err) {
-                  //	if (err) console.error(err)
-                  //})
-                  if (
-                    item == answers.selectedItem[i] &&
-                    workingObj.SelectionArr.indexOf(item) > -1
-                  ) {
-                    workingObj.SelectionArr.splice(
-                      workingObj.SelectionArr.indexOf(item)
-                    );
-                    workingObj.thisRan = {};
-                    jsonfile.writeFile(
-                      "Selecteditems.json",
-                      workingObj,
-                      function (err) {
-                        if (err) console.error(err);
-                      }
-                    );
-                    return item;
-                  } else if (item == answers.selectedItem[i]) {
-                    workingObj.SelectionArr.push(item);
-                    jsonfile.writeFile(
-                      "Selecteditems.json",
-                      workingObj,
-                      function (err) {
-                        if (err) console.error(err);
-                      }
-                    );
-                    // SelectedSafekeepNew.push(item)
-                    return selectedText(item);
-                  } else if (workingObj.SelectionArr.indexOf(item) != -1) {
-                    return selectedText(item);
-                  } else {
-                    return item;
-                  }
-                })
-              );
-              iteration -= 1;
-            })
-            .catch((error) => console.error(error));
-        }
-        ///eval(code);
-        iteration += 1;
-        //			//node C:\Users\DuttR\unofficalunityapiassistportal\build.js
+        });
       })
-      .catch((error) => {
-        console.log("An error occurred:", error);
-      });
+    }
   }
-  objselect(Object.keys(seedata));
+  Run();
 });
+
 
 /*
 rl.question('Enter the build path: ', (buildPath) => {
