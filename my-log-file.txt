@@ -1,11 +1,7 @@
 created
-created
-created
-created
-$created
-created
-created
-created
+ended selection false
+started selection true : $ : $
+ended selection false
 created
 created
 created
@@ -19,18 +15,23 @@ created
 created
 created
 created
-promise
-Select
-awnser1: $
-$
-promise
-view
-[object Object]
-promise
-Select
-UnityEngine
-promise
-Select
-selected: UnityEngine
-promise
-Select
+created
+created
+created
+created
+created
+created
+created
+created
+created
+created
+created
+created
+created
+created
+created
+created
+created
+created
+created
+created
