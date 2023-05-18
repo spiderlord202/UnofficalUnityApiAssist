@@ -1,4 +1,3 @@
-
 import fs from "fs";
 import jsonpath from "jsonpath";
 import naturalCompare from "string-natural-compare";
@@ -241,16 +240,18 @@ const readFile = new Promise((resolve, reject) => {
   });
 });
 
-
 let currentkeys = [];
 //let selectedAllin = false;
 let selectionPath = "";
 let selected = [];
-let selectedObj = {}
+let selectedObj = {};
 
-let allInvoked = {}
-let selectionInvoked = {}
-let veiwInvoke = {}
+let allInvoked = {};
+let selectionInvoked = {};
+let veiwInvoke = {};
+
+let finalObj = {};
+let testObj = {};
 
 readFile.then((seedata) => {
   function objselect(obj) {
@@ -259,22 +260,22 @@ readFile.then((seedata) => {
       currentkeys = [];
       for (let i = 0; i < Object.keys(obj).length; i++) {
         //if (selectedAllin == false){
-      //for (let l = 0; l < 2; l++) {
+        //for (let l = 0; l < 2; l++) {
         if (selected.indexOf(Object.keys(obj)[i]) > -1) {
-         //- selectedObj[Object.keys(obj)[i]] = {}         
+          //- selectedObj[Object.keys(obj)[i]] = {}
           currentkeys.push("selected: " + Object.keys(obj)[i]);
         } else {
           //delete selectedObj[Object.keys(obj)[i]]
           currentkeys.push(Object.keys(obj)[i]);
         }
-     // }
-   //   } else {
-       // logStream.write("making all children selected")
-     //   currentkeys.push("selected: " + Object.keys(obj)[i]);
-      //}
-    }
-  //  selectedAllin = false;
-   // logStream.write("ended selection "+selectedAllin+"\n")
+        // }
+        //   } else {
+        // logStream.write("making all children selected")
+        //   currentkeys.push("selected: " + Object.keys(obj)[i]);
+        //}
+      }
+      //  selectedAllin = false;
+      // logStream.write("ended selection "+selectedAllin+"\n")
 
       let user = inquirer
         .prompt([
@@ -288,13 +289,15 @@ readFile.then((seedata) => {
         .then((answers) => {
           let awnser = answers.selectedItem[0];
           if (
-            Object.keys(obj).indexOf(awnser.substring("selected: ".length, awnser.length)) > -1
+            Object.keys(obj).indexOf(
+              awnser.substring("selected: ".length, awnser.length)
+            ) > -1
           ) {
             awnser = awnser.substring("selected: ".length, awnser.length);
           }
           selectionPath = awnser;
 
-         // for (let l = 0; l < 2; l++) {
+          // for (let l = 0; l < 2; l++) {
           if (selected.indexOf(awnser) > -1) {
             selected.splice(selected.indexOf(awnser), 1);
           } else {
@@ -302,12 +305,12 @@ readFile.then((seedata) => {
           }
           for (let i = 0; i < Object.keys(obj).length; i++) {
             if (selected.indexOf(Object.keys(obj)[i]) > -1) {
-          selectedObj[Object.keys(obj)[i]] = {}         
-        } else {
-          delete selectedObj[Object.keys(obj)[i]]
-        }
+              selectedObj[Object.keys(obj)[i]] = {};
+            } else {
+              delete selectedObj[Object.keys(obj)[i]];
+            }
           }
-       // }
+          // }
           resolve(); // Resolve the promise here
         });
     });
@@ -330,37 +333,71 @@ readFile.then((seedata) => {
             },
           ])
           .then((answers) => {
-            fs.writeFile("totalstatus.json", JSON.stringify(selectedObj), function(error) {})
+            /*
+            fs.writeFile(
+              "totalstatus.json",
+              JSON.stringify(selectedObj),
+              function (error) {}
+            );
+            allInvoked = selectedObj;
+            */
             //logStream.write("selected: "+selected+"\n")
             if (answers.action == "Select") {
-                fs.writeFile("selectstatus.json", JSON.stringify(selectedObj), function(error) {})
-                selectionInvoked = selectedObj;
-            //  logStream.write("selected before select: "+selected+"\n")
-      //        if (selected.indexOf(selectionPath) > -1){
-        //        selectedAllin = true;
-          //      logStream.write("started selection "+selectedAllin+" : "+selectionPath+" : "+selected+"\n")
-            //} 
-          //  for (let l = 0; l < 2; l++) {
+              /*
+              fs.writeFile(
+                "selectstatus.json",
+                JSON.stringify(selectedObj),
+                function (error) {}
+              );
+              selectionInvoked = selectedObj;
+              */
               objselect(current_obj).then(() => {
                 resolution();
-              })
-            //}
+              });
+              //}
             } else if (answers.action == "view") {
-              fs.writeFile("statusfile.json", JSON.stringify(selectedObj), function(error) {})
+              /*
+              fs.writeFile(
+                "statusfile.json",
+                JSON.stringify(selectedObj),
+                function (error) {}
+              );
+              
               veiwInvoke = selectedObj;
+              */
               //logStream.write("selected before veiw: "+selected+"\n")
-              current_obj = current_obj[selectionPath]
+              current_obj = current_obj[selectionPath];
               //selectedAllin = true;
-             // logStream.write(selected.indexOf(selectionPath)+" selected: "+selected+"\n")
+              // logStream.write(selected.indexOf(selectionPath)+" selected: "+selected+"\n")
               resolution();
             }
-            //logStream.write(selected.indexOf(selectionPath)+" selected: "+selected+"\n")
+
+if (selectionInvoked === allInvoked) {
+  finalObj = { ...selectionInvoked };
+  fs.writeFile("finalObj.json", JSON.stringify(finalObj, null, 2), function (error) {});
+} else {
+  testObj = { ...selectionInvoked };
+  fs.writeFile("testObj.json", JSON.stringify(testObj, null, 2), function (error) {});
+}
+
+fs.writeFile("totalObj.json", JSON.stringify({ ...testObj, ...finalObj }, null, 2), function (error) {});
+
+
+//}
+
+
+            //}
           });
-      })
+      });
       //.then(() => {
       //});
     }
   }
-
+  fs.writeFile("totalObj.json", "", function (error) {});
+  fs.writeFile("testObj.json", "", function (error) {});
+  fs.writeFile("finalObj.json", "", function (error) {});
+  fs.writeFile("statusfile.json", "", function (error) {});
+  fs.writeFile("selectstatus.json", "", function (error) {});
+  fs.writeFile("totalstatus.json", "", function (error) {});
   Run();
 });
