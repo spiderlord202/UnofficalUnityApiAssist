@@ -3,6 +3,7 @@ import jsonpath from "jsonpath";
 import naturalCompare from "string-natural-compare";
 import inquirer from "inquirer";
 import jsonfile from "jsonfile";
+import { json } from "stream/consumers";
 //current_obj[selected[selected.length - 1]]
 
 const logStream = fs.createWriteStream("my-log-file.txt", { flags: "a" });
@@ -63,7 +64,9 @@ const readFile = new Promise((resolve, reject) => {
         for (let j = 0; j < res_obj.length; j++) {
           if (j == 0) {
             if (!newRes.hasOwnProperty(res_obj[j].expression.value)) {
-              newRes[res_obj[j].expression.value] = {};
+              newRes[res_obj[j].expression.value] = {
+                name: res_obj[j].expression.value,
+              };
               //console.log(newRes)
             }
           } else if (j == 1) {
@@ -74,7 +77,7 @@ const readFile = new Promise((resolve, reject) => {
             ) {
               newRes[res_obj[j - 1].expression.value][
                 res_obj[j].expression.value
-              ] = {};
+              ] = { name: res_obj[j].expression.value };
               if (layers.includes(1)) {
                 let initials = "";
                 for (let l = 0; l < res_obj[j].expression.value.length; l++) {
@@ -102,7 +105,9 @@ const readFile = new Promise((resolve, reject) => {
             ) {
               newRes[res_obj[j - 2].expression.value][
                 res_obj[j - 1].expression.value
-              ][res_obj[j].expression.value] = {};
+              ][res_obj[j].expression.value] = {
+                name: res_obj[j].expression.value,
+              };
               if (layers.includes(2)) {
                 let initials = "";
                 for (let l = 0; l < res_obj[j].expression.value.length; l++) {
@@ -133,8 +138,7 @@ const readFile = new Promise((resolve, reject) => {
               newRes[res_obj[j - 3].expression.value][
                 res_obj[j - 2].expression.value
               ][res_obj[j - 1].expression.value][res_obj[j].expression.value] =
-                {};
-
+                { name: res_obj[j].expression.value };
               if (layers.includes(3)) {
                 let initials = "";
 
@@ -169,7 +173,9 @@ const readFile = new Promise((resolve, reject) => {
                 res_obj[j - 3].expression.value
               ][res_obj[j - 2].expression.value][
                 res_obj[j - 1].expression.value
-              ][res_obj[j].expression.value] = {};
+              ][res_obj[j].expression.value] = {
+                name: res_obj[j].expression.value,
+              };
               if (layers.includes(4)) {
                 let initials = "";
                 for (let l = 0; l < res_obj[j].expression.value.length; l++) {
@@ -206,7 +212,7 @@ const readFile = new Promise((resolve, reject) => {
               ][res_obj[j - 3].expression.value][
                 res_obj[j - 2].expression.value
               ][res_obj[j - 1].expression.value][res_obj[j].expression.value] =
-                {};
+                { name: res_obj[j].expression.value };
               if (layers.includes(5)) {
                 let initials = "";
                 for (let l = 0; l < res_obj[j].expression.value.length; l++) {
@@ -244,160 +250,246 @@ let currentkeys = [];
 //let selectedAllin = false;
 let selectionPath = "";
 let selected = [];
-let selectedObj = {};
 
-let allInvoked = {};
-let selectionInvoked = {};
-let veiwInvoke = {};
+let finalKeys = {};
+let a = {};
+let b = {};
 
-let finalObj = {};
-let testObj = {};
+//let allInvoked = {};
+//let selectionInvoked = {};
+//let veiwInvoke = {};
 
-readFile.then((seedata) => {
-  function objselect(obj) {
-    return new Promise(function (resolve, reject) {
-      if (Object.keys(obj).length == 0) reject();
-      currentkeys = [];
-      for (let i = 0; i < Object.keys(obj).length; i++) {
-        //if (selectedAllin == false){
-        //for (let l = 0; l < 2; l++) {
-        if (selected.indexOf(Object.keys(obj)[i]) > -1) {
-          //- selectedObj[Object.keys(obj)[i]] = {}
-          currentkeys.push("selected: " + Object.keys(obj)[i]);
-        } else {
-          //delete selectedObj[Object.keys(obj)[i]]
-          currentkeys.push(Object.keys(obj)[i]);
-        }
-        // }
-        //   } else {
-        // logStream.write("making all children selected")
-        //   currentkeys.push("selected: " + Object.keys(obj)[i]);
-        //}
-      }
-      //  selectedAllin = false;
-      // logStream.write("ended selection "+selectedAllin+"\n")
+//let finalObj = {};
+//let testObj = {};
 
-      let user = inquirer
-        .prompt([
-          {
-            type: "checkbox",
-            name: "selectedItem",
-            message: "Select an item:",
-            choices: currentkeys,
-          },
-        ])
-        .then((answers) => {
-          let awnser = answers.selectedItem[0];
-          if (
-            Object.keys(obj).indexOf(
-              awnser.substring("selected: ".length, awnser.length)
-            ) > -1
-          ) {
-            awnser = awnser.substring("selected: ".length, awnser.length);
-          }
-          selectionPath = awnser;
+readFile.then((todata) => {
+  function overrun(seedata) {
+    function objselect(obj) {
+      return new Promise(function (resolve, reject) {
+        if (Object.keys(obj).length == 0) reject();
+        currentkeys = [];
 
-          // for (let l = 0; l < 2; l++) {
-          if (selected.indexOf(awnser) > -1) {
-            selected.splice(selected.indexOf(awnser), 1);
+        for (let i = 0; i < Object.keys(obj).length; i++) {
+          //if (selectedAllin == false){
+          //for (let l = 0; l < 2; l++) {
+          if (selected.indexOf(Object.keys(obj)[i]) > -1) {
+            //- selectedObj[Object.keys(obj)[i]] = {}
+            currentkeys.push("selected: " + Object.keys(obj)[i]);
+            finalKeys[Object.keys(obj)[i]] = {};
           } else {
-            selected.push(awnser);
+            //delete selectedObj[Object.keys(obj)[i]]
+            currentkeys.push(Object.keys(obj)[i]);
+            delete finalKeys[Object.keys(obj)[i]];
           }
-          for (let i = 0; i < Object.keys(obj).length; i++) {
-            if (selected.indexOf(Object.keys(obj)[i]) > -1) {
-              selectedObj[Object.keys(obj)[i]] = {};
-            } else {
-              delete selectedObj[Object.keys(obj)[i]];
-            }
-          }
-          // }
-          resolve(); // Resolve the promise here
-        });
-    });
-  }
+          /*
+            fs.writeFile(
+                "finalObj.json",
+                JSON.stringify(finalKeys, null, 2),
+                function (error) {}
+            );
+          */
+          // finalKeys = obj;
 
-  let current_obj = seedata;
-  async function Run() {
-    while (current_obj instanceof Object) {
-      await new Promise(function (resolve, reject) {
-        function resolution() {
-          resolve();
+          //Do work here instead
+
+          //
+          // }
+          //   } else {
+          // logStream.write("making all children selected")
+          //   currentkeys.push("selected: " + Object.keys(obj)[i]);
+          //}
         }
-        let action = inquirer
+        //  selectedAllin = false;
+        // logStream.write("ended selection "+selectedAllin+"\n")
+
+        let user = inquirer
           .prompt([
             {
-              type: "list",
-              name: "action",
-              message: "Select an action:",
-              choices: ["Select", "view", "Select and view", "Back", "Quit"],
+              type: "checkbox",
+              name: "selectedItem",
+              message: "Select an item:",
+              choices: currentkeys,
             },
           ])
           .then((answers) => {
-            /*
-            fs.writeFile(
-              "totalstatus.json",
-              JSON.stringify(selectedObj),
-              function (error) {}
-            );
-            allInvoked = selectedObj;
-            */
-            //logStream.write("selected: "+selected+"\n")
-            if (answers.action == "Select") {
-              /*
-              fs.writeFile(
-                "selectstatus.json",
-                JSON.stringify(selectedObj),
-                function (error) {}
-              );
-              selectionInvoked = selectedObj;
-              */
-              objselect(current_obj).then(() => {
-                resolution();
-              });
-              //}
-            } else if (answers.action == "view") {
-              /*
-              fs.writeFile(
-                "statusfile.json",
-                JSON.stringify(selectedObj),
-                function (error) {}
-              );
-              
-              veiwInvoke = selectedObj;
-              */
-              //logStream.write("selected before veiw: "+selected+"\n")
-              current_obj = current_obj[selectionPath];
-              //selectedAllin = true;
-              // logStream.write(selected.indexOf(selectionPath)+" selected: "+selected+"\n")
-              resolution();
+            let IsSelected = null;
+            let awnser = answers.selectedItem[0];
+            if (
+              Object.keys(obj).indexOf(
+                awnser.substring("selected: ".length, awnser.length)
+              ) > -1
+            ) {
+              awnser = awnser.substring("selected: ".length, awnser.length);
+            } else {
             }
+            selectionPath = awnser;
 
-if (selectionInvoked === allInvoked) {
-  finalObj = { ...selectionInvoked };
-  fs.writeFile("finalObj.json", JSON.stringify(finalObj, null, 2), function (error) {});
-} else {
-  testObj = { ...selectionInvoked };
-  fs.writeFile("testObj.json", JSON.stringify(testObj, null, 2), function (error) {});
-}
-
-fs.writeFile("totalObj.json", JSON.stringify({ ...testObj, ...finalObj }, null, 2), function (error) {});
-
-
-//}
-
-
+            // for (let l = 0; l < 2; l++) {
+            if (selected.indexOf(awnser) > -1) {
+              selected.splice(selected.indexOf(awnser), 1);
+              // delete selectedObj[awnser]
+            } else {
+              // selectedObj[awnser] = {}
+              IsSelected = true;
+              selected.push(awnser);
+            }
+            //  for (let i = 0; i < selected.length; i++) {
+            //  selectedObj[selected[i]] = {}
             //}
+            /*
+          for (let i = 0; i < Object.keys(obj).length; i++) {
+            if (selected.indexOf(Object.keys(obj)[i]) > -1) {
+              //selectedObj[Object.keys(obj)[i]] = {};
+            } else {
+              //delete selectedObj[Object.keys(obj)[i]];
+            }
+          }
+          */
+            // }
+            let returnObj = {};
+            returnObj.content = awnser;
+            returnObj.IsSelected = IsSelected;
+            resolve(returnObj); // Resolve the promise here
           });
       });
-      //.then(() => {
-      //});
     }
+
+    let current_obj = seedata;
+    async function Run() {
+      while (current_obj instanceof Object) {
+        await new Promise(function (resolve, reject) {
+          function resolution() {
+            resolve();
+          }
+          let action = inquirer
+            .prompt([
+              {
+                type: "list",
+                name: "action",
+                message: "Select an action:",
+                choices: [
+                  "Select",
+                  "view",
+                  "Select and view",
+                  "Back",
+                  "Quit",
+                  "Finished",
+                ],
+              },
+            ])
+            .then((answers) => {
+              if (answers.action === "Select") {
+                // finalKeys = current_obj
+                objselect(current_obj)
+                  .then((answer) => {
+                    return resolution();
+                  })
+                  .catch((error) => {
+                    // Handle any errors in objselect()
+                    console.error(error);
+                    resolution();
+                  });
+              } else if (answers.action === "view") {
+                current_obj = current_obj[selectionPath];
+                resolution();
+              } else if (answers.action === "Select and view") {
+                objselect(current_obj)
+                  .then((answer) => {
+                    return resolution();
+                  })
+                  .catch((error) => {
+                    // Handle any errors in objselect()
+                    console.error(error);
+                    resolution();
+                  });
+                current_obj = current_obj[selectionPath];
+              } else if (answers.action === "Back") {
+                console.log(selectionPath);
+                let findPath = jsonpath.paths(
+                  todata,
+                  `$..[?(@.name == '${selectionPath}')]`
+                )[0];
+                console.log(findPath);
+                const parentPath = findPath.slice(0, -1).slice(0, 1);
+                console.log(jsonpath);
+                let result = null;
+                const nodes = jsonpath.nodes(
+                  json,
+                  jsonpath.stringify(parentPath)
+                );
+                const stream = nodes[0].value;
+
+                let finalValue = "";
+                stream.on("data", (chunk) => {
+                  finalValue += chunk;
+                });
+
+                stream.on("end", () => {
+                  console.log("Final value:", finalValue);
+                });
+
+                stream.on("error", (error) => {
+                  console.error("Error:", error);
+                });
+
+                //getVal()
+                //.value().then(val => {
+                //console.log(nodess)
+                // async function getVal(){
+                //let noderes = await nodess[0].value;
+                //   console.log(jsonpath.stringify(val))
+                //})
+                //}
+                //getVal()
+                // current_obj
+                // current_obj = parentObject;
+              } else if (answers.action === "Quit") {
+              } else if (answers.action === "Finished") {
+              }
+              /*
+              let c = {}
+              for (let j = 0; Object.keys({...b, ...a}).length; j++){
+                if (b.hasOwnProperty(Object.keys({...b, ...a})[j])){
+
+                }
+              }
+              fs.writeFile(
+                "totalObj.json",
+                JSON.stringify(c, null, 2),
+                function (error) {}
+              );
+              fs.writeFile(
+                "selectedstatus.json",
+                JSON.stringify(a, null, 2),
+                function (error) {}
+              );
+              fs.writeFile(
+                "finalObj.json",
+                JSON.stringify(b, null, 2),
+                function (error) {}
+              );
+              */
+            });
+        });
+      }
+    }
+    Run();
   }
-  fs.writeFile("totalObj.json", "", function (error) {});
-  fs.writeFile("testObj.json", "", function (error) {});
+  overrun(todata);
+  /*
+              fs.writeFile("statusfile.json", JSON.stringify(a, null, 2), function (error) {});
+            fs.writeFile("selectedstatus.json", JSON.stringify(b, null, 2), function (error) {});
+            const combinedObj = { ...a, ...b };
+            for (const prop in b) {
+              if (a.hasOwnProperty(prop)){
+                delete combinedObj[prop]
+              }
+            }
+  */
+  //fs.writeFile("totalObj.json", "", function (error) {});
+  //fs.writeFile("testObj.json", "", function (error) {});
   fs.writeFile("finalObj.json", "", function (error) {});
-  fs.writeFile("statusfile.json", "", function (error) {});
-  fs.writeFile("selectstatus.json", "", function (error) {});
-  fs.writeFile("totalstatus.json", "", function (error) {});
-  Run();
+  // fs.writeFile("statusfile.json", "", function (error) {});
+  // fs.writeFile("selectstatus.json", "", function (error) {});
+  //fs.writeFile("totalstatus.json", "", function (error) {});
 });
