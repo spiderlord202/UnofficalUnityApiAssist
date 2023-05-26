@@ -40,7 +40,7 @@ function CreatePrefEnd(str) {
 }
 
 const readFile = new Promise((resolve, reject) => {
-  let newRes = {};
+  const newRes = {};
   let exportres = {};
 
   fs.readFile("Source.json", "utf8", (err, data) => {
@@ -49,7 +49,7 @@ const readFile = new Promise((resolve, reject) => {
       return;
     }
     // console.log(data)
-//ee
+
     const obj = JSON.parse(data).$;
 
     const paths = jsonpath.paths(obj, "$..*");
@@ -64,56 +64,16 @@ const readFile = new Promise((resolve, reject) => {
         for (let j = 0; j < res_obj.length; j++) {
 
           //work here
-          /*
-              let findPath = jsonpath.paths(
-                  todata,
-                  `$..[?(@.name == '${selectionPath}')]`
-                )[0].slice(0, -2)
-               
-                const parentPath = findPath;
-                const nodes = jsonpath.nodes(todata, jsonpath.stringify(parentPath));
-                current_obj = nodes[0].value;
-                resolution();
-          */
-              //  console.log(res_obj)
-              //console.log(path)
-              //function Recurse(){
 
 
-
-                /*
-              let toDom = {}
-              for (let k = res_obj.length-1; k != -1; k--){
-                let parentPath = 
-                jsonpath.paths(
-                  newRes,
-                  `$..[?(@.name == '${res_obj[k].expression.value}')]`
-                )[0]
-                if (parentPath == undefined){
-                  newRes[res_obj[k].expression.value] = {}
-                 // k++
-                  continue;
-                }
-               // console.log(parentPath)
-                const nodes = jsonpath.nodes(newRes, jsonpath.stringify(parentPath))[0].value;
-                //console.log(nodes)
-                if (k == res_obj.length-1){
-                if (!nodes.hasOwnProperty(res_obj[j].expression.value)){
-                  toDom[res_obj[j].expression.value] = {}
-                } else {
-                  toDom[jsonpath.parse(nodes).expression.value] = {}
-                  toDom[jsonpath.parse(nodes).expression.value][res_obj[j].expression.value]
-                  delete res_obj[j].expression.value;
-                }
-              }
+          if (j == 0) {
+            if (!newRes.hasOwnProperty(res_obj[j].expression.value)) {
+              newRes[res_obj[j].expression.value] = {
+                name: res_obj[j].expression.value,
+              };
+              //console.log(newRes)
             }
-            newRes = {...newRes, ...toDom}
-            console.log(newRes)
-            */
-            //}
-            //  jsonpath.nodes(newRes, jsonpath.stringify(findPath))[0].value.hasOwnProperty(res_obj[j].expression.value)
-
-           else if (j == 1) {
+          } else if (j == 1) {
             if (
               !newRes[res_obj[j - 1].expression.value].hasOwnProperty(
                 res_obj[j].expression.value
@@ -281,9 +241,6 @@ const readFile = new Promise((resolve, reject) => {
               }
             }
           }
-
-          
-
         }
         resolve(newRes);
       } catch (error) {
