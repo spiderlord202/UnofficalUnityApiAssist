@@ -49,7 +49,7 @@ const readFile = new Promise((resolve, reject) => {
       return;
     }
     // console.log(data)
-
+//ee
     const obj = JSON.parse(data).$;
 
     const paths = jsonpath.paths(obj, "$..*");
