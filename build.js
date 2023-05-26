@@ -62,6 +62,10 @@ const readFile = new Promise((resolve, reject) => {
         const res_obj = jsonpath.parse(path);
         let prevPath = "";
         for (let j = 0; j < res_obj.length; j++) {
+
+          //work here
+
+
           if (j == 0) {
             if (!newRes.hasOwnProperty(res_obj[j].expression.value)) {
               newRes[res_obj[j].expression.value] = {
@@ -270,37 +274,20 @@ readFile.then((todata) => {
         currentkeys = [];
 
         for (let i = 0; i < Object.keys(obj).length; i++) {
-          //if (selectedAllin == false){
-          //for (let l = 0; l < 2; l++) {
           if (selected.indexOf(Object.keys(obj)[i]) > -1) {
-            //- selectedObj[Object.keys(obj)[i]] = {}
             currentkeys.push("selected: " + Object.keys(obj)[i]);
             finalKeys[Object.keys(obj)[i]] = {};
           } else {
-            //delete selectedObj[Object.keys(obj)[i]]
             currentkeys.push(Object.keys(obj)[i]);
             delete finalKeys[Object.keys(obj)[i]];
           }
-          /*
+          
             fs.writeFile(
                 "finalObj.json",
                 JSON.stringify(finalKeys, null, 2),
                 function (error) {}
             );
-          */
-          // finalKeys = obj;
-
-          //Do work here instead
-
-          //
-          // }
-          //   } else {
-          // logStream.write("making all children selected")
-          //   currentkeys.push("selected: " + Object.keys(obj)[i]);
-          //}
         }
-        //  selectedAllin = false;
-        // logStream.write("ended selection "+selectedAllin+"\n")
 
         let user = inquirer
           .prompt([
@@ -308,7 +295,7 @@ readFile.then((todata) => {
               type: "checkbox",
               name: "selectedItem",
               message: "Select an item:",
-              choices: currentkeys,
+              choices: currentkeys.filter(e => e !== 'name')
             },
           ])
           .then((answers) => {
@@ -333,19 +320,6 @@ readFile.then((todata) => {
               IsSelected = true;
               selected.push(awnser);
             }
-            //  for (let i = 0; i < selected.length; i++) {
-            //  selectedObj[selected[i]] = {}
-            //}
-            /*
-          for (let i = 0; i < Object.keys(obj).length; i++) {
-            if (selected.indexOf(Object.keys(obj)[i]) > -1) {
-              //selectedObj[Object.keys(obj)[i]] = {};
-            } else {
-              //delete selectedObj[Object.keys(obj)[i]];
-            }
-          }
-          */
-            // }
             let returnObj = {};
             returnObj.content = awnser;
             returnObj.IsSelected = IsSelected;
@@ -404,71 +378,19 @@ readFile.then((todata) => {
                   });
                 current_obj = current_obj[selectionPath];
               } else if (answers.action === "Back") {
-                console.log(selectionPath);
+                // let jsonToPath = {...todata}
                 let findPath = jsonpath.paths(
                   todata,
                   `$..[?(@.name == '${selectionPath}')]`
-                )[0];
-                console.log(findPath);
-                const parentPath = findPath.slice(0, -1).slice(0, 1);
-                console.log(jsonpath);
-                let result = null;
-                const nodes = jsonpath.nodes(
-                  json,
-                  jsonpath.stringify(parentPath)
-                );
-                const stream = nodes[0].value;
-
-                let finalValue = "";
-                stream.on("data", (chunk) => {
-                  finalValue += chunk;
-                });
-
-                stream.on("end", () => {
-                  console.log("Final value:", finalValue);
-                });
-
-                stream.on("error", (error) => {
-                  console.error("Error:", error);
-                });
-
-                //getVal()
-                //.value().then(val => {
-                //console.log(nodess)
-                // async function getVal(){
-                //let noderes = await nodess[0].value;
-                //   console.log(jsonpath.stringify(val))
-                //})
-                //}
-                //getVal()
-                // current_obj
-                // current_obj = parentObject;
-              } else if (answers.action === "Quit") {
+                )[0].slice(0, -2)
+               
+                const parentPath = findPath;
+                const nodes = jsonpath.nodes(todata, jsonpath.stringify(parentPath));
+                current_obj = nodes[0].value;
+                resolution();
               } else if (answers.action === "Finished") {
-              }
-              /*
-              let c = {}
-              for (let j = 0; Object.keys({...b, ...a}).length; j++){
-                if (b.hasOwnProperty(Object.keys({...b, ...a})[j])){
 
-                }
-              }
-              fs.writeFile(
-                "totalObj.json",
-                JSON.stringify(c, null, 2),
-                function (error) {}
-              );
-              fs.writeFile(
-                "selectedstatus.json",
-                JSON.stringify(a, null, 2),
-                function (error) {}
-              );
-              fs.writeFile(
-                "finalObj.json",
-                JSON.stringify(b, null, 2),
-                function (error) {}
-              );
-              */
+              } 
             });
         });
       }
