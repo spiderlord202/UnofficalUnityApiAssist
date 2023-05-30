@@ -1,35 +1,12 @@
 {
-<<<<<<< HEAD
-  "name": "unofficalunityapiassist",
-  "displayName": "Unoffical Unity Api Assist",
-  "description": "A snippit helper in alot of api keywords",
-=======
   "type": "module",
   "name": "unofficalunityapiassistportal",
   "displayName": "UnofficalUnityApiAssistPortal",
   "description": "This loads the UnofficalUntiyApiAssist to help suggest api words and overral makes your time with unity easier",
->>>>>>> 9165f8c (E)
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.77.0"
   },
-<<<<<<< HEAD
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/spiderlord202/UnofficalUnityApiAssist.git"
-  },
-  "icon": "icon.png",
-  "categories": [
-    "Snippets"
-  ],
-  "contributes": {
-    "snippets": [
-      {
-        "language": "csharp",
-        "path": "./snippets/snippets.code-snippets"
-      }
-    ]
-=======
   "categories": [
     "Other"
   ],
@@ -73,6 +50,5 @@
     "jsonpath": "^1.1.1",
     "prettier": "^2.8.8",
     "string-natural-compare": "^3.0.1"
->>>>>>> 9165f8c (E)
   }
 }

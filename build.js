@@ -12,19 +12,19 @@ let layers = [];
 
 logStream.write("created\n");
 
-jsonfile.writeFile("Selecteditems.json", { SelectionArr: [] }, function (err) {
-  if (err) console.error(err);
-});
 
-function CreatePrefEnd(str) {
-  //console.log(str)
-
+function CreatePrefEnd(prestr) {
+ // console.log(str)
+ //if (prestr == null) return ["nothing"];
+ let str = "Word"+prestr
   const words = str.match(/[A-Z][a-z]+/g);
+  try {
   const sorted = words.sort(naturalCompare);
+  
   const finalWords = [];
 
   for (let l = 0; l < sorted.length; l++) {
-    finalWords.push({ name: sorted[l], pos: str.indexOf(sorted[l]) });
+    finalWords.push({ name: sorted[l].slice("Word".length), pos: str.indexOf(sorted[l]) });
   }
 
   finalWords.sort(function (a, b) {
@@ -36,10 +36,18 @@ function CreatePrefEnd(str) {
   finalWords.forEach((obj) => {
     pushedWords.push(obj.name);
   });
+  //let wordsToPush = pushedWords
+  //.splice(0, 1)
+  //wordsToPush[0] == wordsToPush[0].substring(0, "Word".length)
+ // console.log(wordsToPush[0])
   return pushedWords;
+  } catch {
+    
+  }
 }
 
 const readFile = new Promise((resolve, reject) => {
+  //try {
   const newRes = {};
   let exportres = {};
 
@@ -54,7 +62,8 @@ const readFile = new Promise((resolve, reject) => {
 
     const paths = jsonpath.paths(obj, "$..*");
     const pathList = paths.map((p) => p.join(".")).filter((p) => p != "");
-
+//console.log(lastChildPaths)
+    //console.log(pathList)
     for (let i = 0; i < pathList.length; i++) {
       try {
         let path = pathList[i];
@@ -64,191 +73,20 @@ const readFile = new Promise((resolve, reject) => {
         for (let j = 0; j < res_obj.length; j++) {
 
           //work here
-
-
-          if (j == 0) {
-            if (!newRes.hasOwnProperty(res_obj[j].expression.value)) {
-              newRes[res_obj[j].expression.value] = {
-                name: res_obj[j].expression.value,
-              };
-              //console.log(newRes)
-            }
-          } else if (j == 1) {
-            if (
-              !newRes[res_obj[j - 1].expression.value].hasOwnProperty(
-                res_obj[j].expression.value
-              )
-            ) {
-              newRes[res_obj[j - 1].expression.value][
-                res_obj[j].expression.value
-              ] = { name: res_obj[j].expression.value };
-              if (layers.includes(1)) {
-                let initials = "";
-                for (let l = 0; l < res_obj[j].expression.value.length; l++) {
-                  if (
-                    res_obj[j].expression.value.split("")[l] ==
-                    res_obj[j].expression.value.split("")[l].toUpperCase()
-                  ) {
-                    initials += res_obj[j].expression.value.split("")[l];
-                  }
-                }
-                newRes[res_obj[j - 1].expression.value][
-                  res_obj[j].expression.value
-                ].prefix = [
-                  initials,
-                  CreatePrefEnd(res_obj[j].expression.value)[0],
-                  res_obj[j].expression.value,
-                ];
-              }
-            }
-          } else if (j == 2) {
-            if (
-              !newRes[res_obj[j - 2].expression.value][
-                res_obj[j - 1].expression.value
-              ].hasOwnProperty(res_obj[j].expression.value)
-            ) {
-              newRes[res_obj[j - 2].expression.value][
-                res_obj[j - 1].expression.value
-              ][res_obj[j].expression.value] = {
-                name: res_obj[j].expression.value,
-              };
-              if (layers.includes(2)) {
-                let initials = "";
-                for (let l = 0; l < res_obj[j].expression.value.length; l++) {
-                  if (
-                    res_obj[j].expression.value.split("")[l] ==
-                    res_obj[j].expression.value.split("")[l].toUpperCase()
-                  ) {
-                    initials += res_obj[j].expression.value.split("")[l];
-                  }
-                }
-                newRes[res_obj[j - 2].expression.value][
-                  res_obj[j - 1].expression.value
-                ][res_obj[j].expression.value].prefix = [
-                  initials,
-                  CreatePrefEnd(res_obj[j].expression.value)[0],
-                  res_obj[j].expression.value,
-                ];
-              }
-            }
-            //e
-          } else if (j == 3) {
-            if (
-              !newRes[res_obj[j - 3].expression.value][
-                res_obj[j - 2].expression.value
-              ][res_obj[j - 1].expression.value].hasOwnProperty(
-                res_obj[j].expression.value
-              )
-            ) {
-              newRes[res_obj[j - 3].expression.value][
-                res_obj[j - 2].expression.value
-              ][res_obj[j - 1].expression.value][res_obj[j].expression.value] =
-                { name: res_obj[j].expression.value };
-              if (layers.includes(3)) {
-                let initials = "";
-
-                for (let l = 0; l < res_obj[j].expression.value.length; l++) {
-                  if (
-                    res_obj[j].expression.value.split("")[l] ==
-                    res_obj[j].expression.value.split("")[l].toUpperCase()
-                  ) {
-                    initials += res_obj[j].expression.value.split("")[l];
-                  }
-                }
-                newRes[res_obj[j - 3].expression.value][
-                  res_obj[j - 2].expression.value
-                ][res_obj[j - 1].expression.value][
-                  res_obj[j].expression.value
-                ].prefix = [
-                  initials,
-                  CreatePrefEnd(res_obj[j].expression.value)[0],
-                  res_obj[j].expression.value,
-                ];
-              }
-            }
-          } else if (j == 4) {
-            if (
-              !newRes[res_obj[j - 4].expression.value][
-                res_obj[j - 3].expression.value
-              ][res_obj[j - 2].expression.value][
-                res_obj[j - 1].expression.value
-              ].hasOwnProperty(res_obj[j].expression.value)
-            ) {
-              newRes[res_obj[j - 4].expression.value][
-                res_obj[j - 3].expression.value
-              ][res_obj[j - 2].expression.value][
-                res_obj[j - 1].expression.value
-              ][res_obj[j].expression.value] = {
-                name: res_obj[j].expression.value,
-              };
-              if (layers.includes(4)) {
-                let initials = "";
-                for (let l = 0; l < res_obj[j].expression.value.length; l++) {
-                  if (
-                    res_obj[j].expression.value.split("")[l] ==
-                    res_obj[j].expression.value.split("")[l].toUpperCase()
-                  ) {
-                    initials += res_obj[j].expression.value.split("")[l];
-                  }
-                }
-                newRes[res_obj[j - 4].expression.value][
-                  res_obj[j - 3].expression.value
-                ][res_obj[j - 2].expression.value][
-                  res_obj[j - 1].expression.value
-                ][res_obj[j].expression.value].prefix = [
-                  initials,
-                  CreatePrefEnd(res_obj[j].expression.value)[0],
-                  res_obj[j].expression.value,
-                ];
-              }
-            }
-          } else if (j == 5) {
-            if (
-              !newRes[res_obj[j - 5].expression.value][
-                res_obj[j - 4].expression.value
-              ][res_obj[j - 3].expression.value][
-                res_obj[j - 2].expression.value
-              ][res_obj[j - 1].expression.value].hasOwnProperty(
-                res_obj[j].expression.value
-              )
-            ) {
-              newRes[res_obj[j - 5].expression.value][
-                res_obj[j - 4].expression.value
-              ][res_obj[j - 3].expression.value][
-                res_obj[j - 2].expression.value
-              ][res_obj[j - 1].expression.value][res_obj[j].expression.value] =
-                { name: res_obj[j].expression.value };
-              if (layers.includes(5)) {
-                let initials = "";
-                for (let l = 0; l < res_obj[j].expression.value.length; l++) {
-                  if (
-                    res_obj[j].expression.value.split("")[l] ==
-                    res_obj[j].expression.value.split("")[l].toUpperCase()
-                  ) {
-                    initials += res_obj[j].expression.value.split("")[l];
-                  }
-                }
-                newRes[res_obj[j - 5].expression.value][
-                  res_obj[j - 4].expression.value
-                ][res_obj[j - 3].expression.value][
-                  res_obj[j - 2].expression.value
-                ][res_obj[j - 1].expression.value][
-                  res_obj[j].expression.value
-                ].prefix = [
-                  initials,
-                  CreatePrefEnd(res_obj[j].expression.value)[0],
-                  res_obj[j].expression.value,
-                ];
-              }
-            }
-          }
         }
+       
+        //console.log(newRes)
         resolve(newRes);
       } catch (error) {
         console.log(error);
       }
     }
   });
+//} catch (err){
+  //if (err.substring(0, "TypeError: Cannot read properties of undefined (reading '0')".length) != "TypeError: Cannot read properties of undefined (reading '0')"){
+    //console.error(err)
+  //}
+//}
 });
 
 let currentkeys = [];
@@ -268,6 +106,15 @@ let b = {};
 //let testObj = {};
 
 readFile.then((todata) => {
+  const jsonString = JSON.stringify(todata, null, 2);
+
+fs.writeFile('Source2.json', jsonString, 'utf8', function (err) {
+  if (err) {
+    console.error('Error writing JSON to file:', err);
+  } else {
+   // console.log('JSON has been written to file successfully.');
+  }
+});
   function overrun(seedata) {
     function objselect(obj) {
       return new Promise(function (resolve, reject) {
@@ -296,7 +143,7 @@ readFile.then((todata) => {
               type: "checkbox",
               name: "selectedItem",
               message: "Select an item:",
-              choices: currentkeys.filter(e => e !== 'name')
+              choices: currentkeys.filter(e => e !== 'name' && e !== 'prefix')
             },
           ])
           .then((answers) => {
@@ -399,20 +246,4 @@ readFile.then((todata) => {
     Run();
   }
   overrun(todata);
-  /*
-              fs.writeFile("statusfile.json", JSON.stringify(a, null, 2), function (error) {});
-            fs.writeFile("selectedstatus.json", JSON.stringify(b, null, 2), function (error) {});
-            const combinedObj = { ...a, ...b };
-            for (const prop in b) {
-              if (a.hasOwnProperty(prop)){
-                delete combinedObj[prop]
-              }
-            }
-  */
-  //fs.writeFile("totalObj.json", "", function (error) {});
-  //fs.writeFile("testObj.json", "", function (error) {});
-  fs.writeFile("finalObj.json", "", function (error) {});
-  // fs.writeFile("statusfile.json", "", function (error) {});
-  // fs.writeFile("selectstatus.json", "", function (error) {});
-  //fs.writeFile("totalstatus.json", "", function (error) {});
 });
