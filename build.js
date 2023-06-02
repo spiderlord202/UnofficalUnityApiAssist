@@ -75,7 +75,8 @@ function CreatePrefEnd(prestr) {
   } catch {}
 }
 let permastop = false;
-const readFile = new Promise((resolve, reject) => {
+function readFile(){
+return new Promise((resolve, reject) => {
   fs.readFile("Source.json", {}, function (err, predata) {
     //console.log(predata.toString('utf-8'))
     let pathlist = JSON.parse(predata.toString("utf-8"));
@@ -292,6 +293,7 @@ const readFile = new Promise((resolve, reject) => {
                                             runPreset();
                                           }
                                         }
+                                        
                                         fs.writeFile(
                                           "Source_Names.json",
                                           JSON.stringify(newRes, null, 2),
@@ -303,6 +305,7 @@ const readFile = new Promise((resolve, reject) => {
                                             }
                                           }
                                         );
+                                        resolve(newRes)
                                       }
                                     );
                                   });
@@ -320,23 +323,7 @@ const readFile = new Promise((resolve, reject) => {
     displayObj();
   });
 });
-
-let currentkeys = [];
-let selectionPath = "";
-let selected = [];
-
-let finalKeys = {};
-
-readFile.then((todata) => {
-  const jsonString = JSON.stringify(todata, null, 2);
-
-  fs.writeFile("Source2.json", jsonString, "utf8", function (err) {
-    if (err) {
-      console.error("Error writing JSON to file:", err);
-    } else {
-      // console.log('JSON has been written to file successfully.');
-    }
-  });
+}
   function overrun(seedata) {
     function objselect(obj) {
       return new Promise(function (resolve, reject) {
@@ -351,12 +338,6 @@ readFile.then((todata) => {
             currentkeys.push(Object.keys(obj)[i]);
             delete finalKeys[Object.keys(obj)[i]];
           }
-
-          fs.writeFile(
-            "finalObj.json",
-            JSON.stringify(finalKeys, null, 2),
-            function (error) {}
-          );
         }
 
         let user = inquirer
@@ -382,13 +363,9 @@ readFile.then((todata) => {
             } else {
             }
             selectionPath = awnser;
-
-            // for (let l = 0; l < 2; l++) {
             if (selected.indexOf(awnser) > -1) {
               selected.splice(selected.indexOf(awnser), 1);
-              // delete selectedObj[awnser]
             } else {
-              // selectedObj[awnser] = {}
               IsSelected = true;
               selected.push(awnser);
             }
@@ -425,13 +402,11 @@ readFile.then((todata) => {
             ])
             .then((answers) => {
               if (answers.action === "Select") {
-                // finalKeys = current_obj
                 objselect(current_obj)
                   .then((answer) => {
                     return resolution();
                   })
                   .catch((error) => {
-                    // Handle any errors in objselect()
                     console.error(error);
                     resolution();
                   });
@@ -444,20 +419,18 @@ readFile.then((todata) => {
                     return resolution();
                   })
                   .catch((error) => {
-                    // Handle any errors in objselect()
                     console.error(error);
                     resolution();
                   });
                 current_obj = current_obj[selectionPath];
               } else if (answers.action === "Back") {
-                // let jsonToPath = {...todata}
                 let findPath = jsonpath
-                  .paths(todata, `$..[?(@.name == '${selectionPath}')]`)[0]
+                  .paths(seedata, `$..[?(@.name == '${selectionPath}')]`)[0]
                   .slice(0, -2);
 
                 const parentPath = findPath;
                 const nodes = jsonpath.nodes(
-                  todata,
+                  seedata,
                   jsonpath.stringify(parentPath)
                 );
                 current_obj = nodes[0].value;
@@ -470,5 +443,30 @@ readFile.then((todata) => {
     }
     Run();
   }
+
+let currentkeys = [];
+let selectionPath = "";
+let selected = [];
+
+let finalKeys = {};
+
+        let user = inquirer
+          .prompt([
+            {
+              type: "list",
+              name: "action",
+              message: `Do you want to (re)build the snippits file? (see 'rebuilding' before selecting yes'):`,
+              choices: ['yes', 'no']
+            }]).then((awnsers) => { 
+              console.log('my methods for building the file isnt the most efficent, and is better done over on github, i recommend that you take this existing data and filter what you want')
+              if (awnsers.action == "no"){
+                  fs.readFile("Source_Names.json", {}, function (err, predata) {
+                   let pathlist = JSON.parse(predata.toString("utf-8"));
+                   overrun(pathlist);
+                  })
+              } else {
+readFile().then((todata) => {
   overrun(todata);
 });
+}
+  })
