@@ -6,20 +6,49 @@
   "engines": {
     "vscode": "^1.77.0"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/spiderlord202/UnofficalUnityApiAssist.git"
-  },
-  "icon": "icon.png",
   "categories": [
-    "Snippets"
+    "Other"
   ],
+  "activationEvents": [
+    "onCommand:unofficalunityapiportal.helloWorld",
+    "onCommand:unofficalunityapiportal.build"
+  ],
+  "main": "./extension.js",
+  "type": "module",
   "contributes": {
-    "snippets": [
+    "commands": [
       {
-        "language": "csharp",
-        "path": "./snippets/snippets.code-snippets"
+        "command": "unofficalunityapiassistportal.helloWorld",
+        "title": "Hello World"
+      },
+      {
+        "command": "unofficalunityapiassistportal.build",
+        "title": "build"
       }
     ]
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "test": "node ./test/runTest.js",
+    "start": ".\build.js"
+  },
+  "devDependencies": {
+    "@types/glob": "^8.1.0",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "16.x",
+    "@types/vscode": "^1.77.0",
+    "@vscode/test-electron": "^2.3.0",
+    "eslint": "^8.39.0",
+    "glob": "^8.1.0",
+    "mocha": "^10.2.0",
+    "typescript": "^5.0.4"
+  },
+  "dependencies": {
+    "inquirer": "^9.2.1",
+    "jsonfile": "^6.1.0",
+    "jsonpath": "^1.1.1",
+    "prettier": "^2.8.8",
+    "string-natural-compare": "^3.0.1"
   }
 }
